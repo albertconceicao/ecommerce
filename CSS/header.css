@@ -1,0 +1,74 @@
+
+/* 
+------------- Menu lateral  ----------------
+*/
+
+div#grupos-mobile {
+    display: none;
+    width: 102%;
+}
+button#botao-grupos.btn {
+    margin: 10px;
+    background: var(--gray3);
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+aside h2 {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 40px;
+    border-bottom:1px solid var(--gray3);
+
+}
+/*
+-- Formatando links --
+*/
+#aside-nav nav.navbar{
+    background: var(--white);
+    margin: 20px;
+    border-radius: 5px;
+    display: block;
+}
+
+
+
+/*
+-- Formatando links --
+*/
+#aside-nav nav a.nav-link {
+    background: url(../img/caret-right-solid.svg) no-repeat left center;
+    background-size: 6px;
+    padding-left: 15px;
+    color: #000;
+    border-bottom: 0.5px solid lightgray;
+    transition: 0.3s;
+}
+#aside-nav nav a.nav-link:hover {
+    padding-left: 20px;
+    color: var(--a-hover);
+    font-weight: bold;
+    border-bottom: 0.5px solid var(--a-hover);
+
+} 
+#aside-nav nav a.nav-link.link-subgrupo{
+    background: none;
+    padding-left: 40px;
+    border: none;
+}
+
+#aside-nav nav a.nav-link.link-subgrupo:hover {
+    padding-left: 50px;
+    color: green;
+    font-weight: bold;
+
+} 
+
+@media (min-width: 991.98px) { 
+    
+    button#botao-grupos.btn {
+      display: none;
+    }
+}

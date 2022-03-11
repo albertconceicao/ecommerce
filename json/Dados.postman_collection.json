@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "dea63253-129a-4c77-8274-522d287fb198",
+		"name": "Dados",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buscar Template",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Client-Id",
+						"value": "MDI4MDI4MjYwMDAxMDg=",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/mithra/v1/template",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"mithra",
+						"v1",
+						"template"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Registro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client-Id",
+						"value": "MDg1ODA4NTgwMDAxODQ=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"area\": \"CLIENT\",\r\n        \"data\": [\r\n            {\r\n                \"CGC\": \"44444444444\",\r\n                \"NOME\": \"Arthur Renê Carvalho da Silva\",\r\n                \"CEP\": \"41290450\",\r\n                \"ENDERECO\": \"RUA DA FELICIDADE\",\r\n                \"ESTADO\": \"BA\",\r\n                \"NUMERO\": \"20\",\r\n                \"MUNICIPIO\": \"SALVADOR\",\r\n                \"TELEFO\": \"71922989665\",\r\n                \"PESSOA\": \"F\",\r\n                \"CODMUN\": \"2927408\",\r\n                \"CODIGO\": \"000553\"\r\n            }\r\n        ]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server_url}}/mithra/v1/template",
+					"host": [
+						"{{server_url}}"
+					],
+					"path": [
+						"mithra",
+						"v1",
+						"template"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Registro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Client-Id",
+						"value": "MDI4MDI4MjYwMDAxMDg=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"area\": \"PRODUT\",\r\n    \"search\": [\r\n        {\r\n            \"field\": \"GRUPO\",\r\n            \"operation\": \"EQUAL_TO\",\r\n            \"value\": \"01\"\r\n        }\r\n    ],\r\n    \"order\": \"CODIGO DESC\",\r\n    \"limit\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/mithra/v1/search",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"mithra",
+						"v1",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080/MithraAPI"
+		},
+		{
+			"key": "server_url",
+			"value": "https://api.mithra.com.br"
+		}
+	]
+}

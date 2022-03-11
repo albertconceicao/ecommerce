@@ -1,0 +1,48 @@
+
+#form-items h2{
+    border-bottom: 1px solid var(--gray3);
+    text-align: center;
+}
+
+#form-items{
+    margin-bottom: 30px;
+
+}
+#form-items h2{
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--gray3);
+    font-weight: 400;
+}
+section#inputs  {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 0.25rem;
+    margin: 40px 0 0 0;
+}
+section#inputs input {
+    background: #e6e6e6;
+}
+#form1 h3, #form2 h3{
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid lightgray;
+    text-align: center;
+}
+
+#form1 label, #form2 label {
+    font-weight: 400;
+}
+
+section#inputs button.btn.btn-lg {
+    margin: 20px 0;
+    display: inline;
+    padding: 8px 50px 8px 50px;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--blue);
+    transition: filter 0.2s;
+}
+section#inputs button.btn.btn-lg:hover {
+    filter: brightness(0.9);
+}

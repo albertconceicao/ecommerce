@@ -1,0 +1,68 @@
+
+div#acesso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#acesso #cadastro label,div#acesso #login label{
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0px;
+    font-weight: 500;
+
+}
+form.inputs-usuario {
+    width: 300px;
+}
+
+small#emailHelp.form-text.text-muted{
+    font-size: 0.7rem;
+}
+label.form-check-label{
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+button.container-fluid.btn-primary{
+    margin: 20px 0 0 0;
+    border-radius: 20px;
+}
+
+div#acesso #cadastro form, div#acesso #login form{
+    border-radius: 5px; 
+    padding: 50px 30px 30px 30px;
+    background-color:  #e6e6e6; 
+    box-shadow: 3px 2px 5px rgba(17,17,17,0.55);
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
+}
+
+div.user {
+    text-align: center;
+}
+main img{
+    margin-top: -30px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    width: 120px;
+    text-align: center;
+}
+button#btn-login.container-fluid.btn.btn-lg {
+    margin: 20px 0 0 0;
+    display: inline;
+    padding: 8px 50px 8px 50px;
+    border-radius: 2rem;
+    color: var(--white);
+    background: var(--blue);
+    transition: filter 0.2s;
+}
+button#btn-login.container-fluid.btn.btn-lg:hover {
+    filter: brightness(0.9);
+} 
+
+@media (max-width: 500px) {
+    div#acesso #cadastro form, div#acesso #login form{
+        width: 90%;
+    }
+}

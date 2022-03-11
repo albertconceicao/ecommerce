@@ -1,0 +1,237 @@
+main h2{
+    border-bottom: 1px solid var(--gray3);
+}
+img {
+    border-radius: 0.25rem;
+}
+section#grid-produtos {
+    margin: 20px 0 40px 0;
+}
+
+
+.cover img {
+    text-align: center;
+    margin : 40px 0 0 0;
+}
+
+.thumbs {
+    margin: 47px 0 20px 0;
+}
+.thumbs img {
+    max-width: 110px;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+#produto, div#imagens {
+    border: 1px solid var(--gray3);
+    border-radius: 00.25rem;
+    padding: 20px;
+}
+
+#produto .span-produto{
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 10px;
+
+}
+#produto .span-valor {
+    display: inline-block;
+    font-size: 1.6rem;
+    color: blue;
+    margin: 40px 20px 0 0 ;
+}
+#produto .quantidade-pagamento {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#produto h3{
+    border-bottom: 1px solid gray;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 20px 0 ;
+}
+
+#acoes-compra span {
+    color: blue;
+    font-size: 1.2rem;
+    margin: 0 2px 0 0;
+}
+
+.qtd-produtos {
+    font-size: 1rem;
+    display: flex;
+}
+#botoes-compra {
+    display: inline;
+    justify-content: space-between;
+    
+}
+.qtd-produtos .increment-decrement {
+    height: 3rem;
+    width: 1.5rem;
+    color: var(--white);
+    font-weight: 600;
+    border: 1px solid gray;
+    border-radius: 0.25rem;
+    line-height: 1rem;
+    cursor: pointer;
+    background: var(--gray3);
+}
+.qtd-produtos input {
+    width: 3.3rem;
+    height: 3rem;
+    border-radius: 0.25rem;
+    border: 1px solid gray;
+    text-align: center;
+}
+div.qtd-produtos button.btn.btn-lg {
+    margin: 0 0 0 20px;
+    display: inline;
+    padding: 8px 50px 8px 50px;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--gray3);
+    transition: filter 0.2s;
+}
+div#botoes-compra button.btn.btn-lg:hover {
+    filter: brightness(0.9);
+}
+button#compartilhar.btn ,  button#favoritar.btn {
+    display: inline;
+    padding: 8px 20 8px 20;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--gray3);
+    transition: filter 0.2s;
+    height: 48px;
+    font-size: 1.2rem;
+    text-align: center;
+
+}
+button#compartilhar.btn:hover ,  button#favoritar.btn:hover{
+    filter: brightness(0.9);
+}
+div#icones-compra {
+    display: inline;
+    margin: 0 0 0 40px;
+}
+#formas-pagamento {
+    display: none;
+}
+div#cep.input-group {
+    margin: 30px 0;
+}
+div#cep input.form-control {
+    font-size: 0.8rem;
+    margin: 0 20px 0 0;
+    border-radius: 0.25rem;
+}
+div#cep button.btn.btn-lg {
+    font-size: 0.8rem;
+    margin: 0 0 0 10px;
+    display: inline;
+    padding: 8px 10px 8px 10px;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--gray);
+    transition: filter 0.2s;
+}
+div#cep button.btn.btn-lg:hover {
+    filter: brightness(0.9);
+}
+
+div#descricao, div#comentarios {
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-radius: 0.25rem;
+    padding: 20px;
+}
+div#descricao {
+    margin: 0 0 20px 0;
+}
+div#descricao h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+div#comentarios  {
+}
+div.form-check.form-check-inline label{
+    margin: 0 0 0 20px;
+}
+div#comentarios span{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 30px 20px 8px 0;
+}
+div#comentarios #check-avaliacao label{
+    font-weight: 400;
+}
+div#comentarios .input-group {
+}
+
+div#comentarios button.btn.btn-lg{
+    margin: 20px 0;
+    display: inline;
+    padding: 8px 50px 8px 50px;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--gray3);
+    transition: filter 0.2s;
+    text-align: right;
+}
+div#comentarios button.btn.btn-lg:hover {
+    filter: brightness(0.9);
+}
+
+section#produtos-semelhantes h2 {
+    margin: 20px 0;
+}
+
+/* 
+    Média queries
+ */
+
+ @media (max-width: 991.98px) { 
+    
+    div#imagens {
+        margin: 0 0 10px 0;
+    }
+    div#produto {
+        margin: 10px 0 0 0;
+    }
+   }
+
+/*  // Small devices (landscape phones, less than 768px) */
+  @media (min-width: 767.98px) { 
+    #produto{
+        
+        
+        
+    }
+    div#imagens  {
+        
+    }
+     
+  }
+
+   @media (min-width: 767px) and (max-width: 1036px) {
+   
+    
+  
+  }
+
+/*  // Medium devices (tablets, less than 992px) */
+  @media (min-width: 991.98px) { 
+     
+   }
+
+/*  // Large devices (desktops, less than 1200px) */
+  @media (min-width: 1199.98px) { 
+   
+    }
+
+

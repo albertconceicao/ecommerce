@@ -1,0 +1,385 @@
+main {
+    margin-top: 2rem;
+}
+table {
+    width: 100%; 
+    border-spacing: 0 0.5rem;
+}
+th {
+    padding: 1.2rem 2rem;
+    line-height: 1.5rem;
+    font-weight: 500;   
+    text-transform: uppercase; 
+    border: 1px solid var(--gray3);
+    background: var(--gray);
+    color: var(--white);
+
+}
+
+td {
+    padding: 1rem 2rem;
+    color: var(--black);
+    border-radius: 0.25rem;
+    border: 1px solid var(--gray3);
+}
+main h2 {
+    border-bottom: 1px solid var(--gray3);
+    margin-bottom: 1.5rem;
+}
+.produto {
+    width: 600px;
+}
+.cupom {
+    margin: 1.5rem 0;
+    padding: 1rem 2rem;
+    border: 1px solid var(--gray);
+    width: 100%;
+    border-radius: 0.25rem;
+    display: block;
+    float: left;
+}
+.cupom label {
+    font-size: 1.2rem;
+    display: inline;
+    margin: 1rem 0;
+    font-weight: 500;
+}
+.cupom input.form-control{
+    margin: 1rem 0;
+}
+input#input-cupom.form-control {
+    display: inline;
+}
+.cupom button.btn.btn-lg {
+    font-size: 1rem;
+    margin: 0 0 0 10px;
+    padding: 8px 10px 8px 10px;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--gray);
+    transition: filter 0.2s;
+    display: block;
+    float: right;
+}
+.cupom button.btn.btn-lg:hover {
+    filter: brightness(0.9);
+}
+.resumo-carrinho {
+    clear: right;
+}
+table#fechamento-carrinho {
+    float: right;
+    width: 500px;
+}
+div.resumo-carrinho button.btn.btn-lg {
+    margin: 1.5rem 0;
+    display: inline;
+    padding: 8px 50px 8px 50px;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--gray3);
+    transition: filter 0.2s;
+}
+div.resumo-carrinho button.btn.btn-lg:hover {
+    filter: 1.5rembrightness(0.9);
+}
+#inferior-carrinho a.nav-link {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--gray);
+    transition: filter 0.2s;
+
+}
+#inferior-carrinho a.nav-link:hover {
+    filter: brightness(0.9);
+    
+
+}
+section#forma-pagamento {
+    clear: both;
+}
+section#final {
+    clear: right;
+}
+section.pre-footer {
+    clear: right;
+}
+button#mais-produtos.btn.btn-lg {
+    background: var(--gray);
+    float: left;
+}
+div.modal-body input {
+    width: fit-content;
+}
+div.modal-body button.btn.btn-lg {
+    font-size: 1rem;
+    margin: 1rem 0;
+    padding: 8px 10px 8px 10px;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--gray);
+    transition: filter 0.2s;
+}
+
+button#finalizar-compra.btn.btn-lg {
+    float: right;
+}
+footer {
+    clear: both;
+}
+#botoes-carrinho {
+}
+#botoes {
+}
+
+div.navbar.navbar-expand {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div#formas-pagamento.container-fluid {
+    padding: 0;
+    margin:0 auto;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+}
+#formas-pagamento {
+    margin-top: 2px;
+}
+
+#formas-pagamento div.navbar {
+    margin: 3rem 0;
+}
+#formas-pagamento li.nav-item {
+    width: 16.8rem;
+    text-align: center;
+    margin: 0 auto;
+}
+#formas-pagamento img {
+    height: 50px;
+    margin: 0 0 0.9rem 0;
+    color: #000;
+}
+#formas-pagamento img#pagamento-pix {
+    color: #fff;
+}
+
+#formas-pagamento li.nav-item:hover {
+    background-color: var(--li-hover);
+    transition: background-color 0.7s;
+    border-radius: 5px;
+    border-bottom: 1px solid var(--gray);
+
+}
+#formas-pagamento a.nav-link {
+    padding-left: 4.2rem;
+    color: #000;
+    width: 200px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+#formas-pagamento a.nav-link:hover {
+    color: #666699;
+    /* background: url('../img/angle-double-right-solid.svg') no-repeat left center;
+    background-size: 2em; */
+}
+#formas-pagamento .active {
+    color: #666699;
+    /* background: url('../img/angle-double-right-solid.svg') no-repeat left center;
+    background-size: 2em; */
+}
+
+/* 
+    ------------- Estilizando seções de forma de pagamento
+*/
+
+section#cartao-credito, section#boleto-bancario, section#pagamento-pix {
+    width: 500px;
+    margin: -2rem auto 1rem auto;
+    padding: 2rem;
+    background: #F7F7F7;
+    border-radius: 0.25rem;
+}
+section#cartao-credito div.input-group {
+    margin: 1rem 0;
+}
+section#cartao-credito div.input-group-text {
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+input#codigo-seguranca.form-control, section#cartao-credito select.custom-select {
+    border-radius: 2rem;
+}
+section#cartao-credito div#ccv-cartao {
+    margin: auto 0.3rem;
+
+}
+div#adicionar-cartao i{
+    color: #000;
+}
+div#adicionar-cartao a{
+    display: inline;
+}
+div#adicionar-cartao button.btn.btn-lg{
+    display: block;
+    margin: 1rem 0;
+    width: 100%;
+    padding: 8px 50px 8px 50px;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--gray3);
+    transition: filter 0.2s;
+}
+div#adicionar-cartao button.btn.btn-lg:hover {
+    filter: brightness(0.9);
+}
+section#boleto-bancario, section#pagamento-pix {
+    display: none;
+}
+section#boleto-bancario ul:first-child{
+    list-style: none;
+    font-size: 1rem;
+    text-align: justify;
+}
+section#boleto-bancario ul{
+    display: block;
+    font-size: 0.8rem;
+}
+section#boleto-bancario li{
+    margin: 1rem 0;
+}
+
+section#boleto-bancario div.total, section#pagamento-pix div.total {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0 1rem 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+section#boleto-bancario button.btn.btn-lg {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 8px 50px 8px 50px;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--gray3);
+    transition: filter 0.2s;
+}
+section#boleto-bancario button.btn.btn-lg:hover {
+    filter: brightness(0.9);
+} 
+section#boleto-bancario div.compra-segura {
+    display: flex;
+    justify-content: end;
+}
+section#boleto-bancario small {
+    font-weight: 500;
+    margin: 0 0.5rem;
+}
+
+section#pagamento-pix div.total {
+    padding: 1rem 0 0 0;
+    border-top: 1px solid var(--gray);
+}
+div.titulo-pagamento {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 2rem 0;
+
+}
+div.titulo-pagamento h3, div.titulo-pagamento img{
+    margin: auto 0;
+}
+div.titulo-pagamento h3 {
+    margin: 0.5rem 0 0.5rem 0.5rem;
+}
+section#cartao-credito div.titulo-pagamento h3, section#boleto-bancario div.titulo-pagamento h3 {
+    font-size: 1.4rem;
+}
+div.titulo-pagamento img {
+    width: 4rem;
+}
+section#cartao-credito div.titulo-pagamento img, section#boleto-bancario div.titulo-pagamento img{
+    width: 3rem;
+}
+section#pagamento-pix div#qrcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section#pagamento-pix div#qrcode img{
+    
+    height: 12rem;
+}
+@media (max-width: 768px) {
+    
+    table {
+        font-size: 0.7rem;
+    }
+    th {
+        padding: 0.5rem 1rem;
+    }
+    
+    td {
+        padding: 0.5rem 1rem;
+        
+    }
+    .produto {
+        width: 300px;
+    }
+    .cupom {
+        width: 100%;
+    }
+    .cupom label {
+    }
+    table#fechamento-carrinho {
+        width: 100%;
+    }
+    button#mais-produtos.btn.btn-lg, button#finalizar-compra.btn.btn-lg {
+        display: block;
+        width: 100%;
+    }
+    section#forma-pagamento span{
+        font-size: 0.6rem;
+    }
+    section#forma-pagamento img {
+        height: 20px;
+    }
+    section#forma-pagamento li.nav-item {
+        width: 8rem;
+        overflow-x: hidden;
+    }
+    #formas-pagamento a.nav-link {
+        padding: 0.5rem 3.5rem 0.5rem 0;
+    }
+    #formas-pagamento li.nav-item:hover {
+        background: none;
+        border: none;
+    }
+    section#cartao-credito, section#boleto-bancario, section#pagamento-pix {
+        width: 85%;
+    }
+    div#formas-pagamento.container-fluid {
+
+    }
+    
+}
+
+@media (min-width:769px) and (max-width: 1024px) {
+    section#forma-pagamento span{
+        font-size: 1.2rem;
+    }
+    section#forma-pagamento img {
+        height: 25px;
+    }
+    section#forma-pagamento li.nav-item {
+        width: 12rem;
+    }
+    #formas-pagamento a.nav-link {
+        padding: 0.4rem 2rem;
+    }
+    
+}
+@media (min-width: 1025px) {
+    
+}
