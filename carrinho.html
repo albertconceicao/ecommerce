@@ -52,15 +52,41 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
+                                <td class="produto">
                                     Título
                                 </td>
                                 
-                                <td>
+                                <td class="produto-valor">
                                     R$50,00
                                 </td>
-                                <td>
-                                    teste
+                                <td >
+                                    <input value="1" max="5" type="number" class="produto-quantidade">
+                                </td>
+                                <!-- <td class="form-group">
+                                    <button 
+                                    type="button" class="increment-decrement" onclick="diminuiQuantidade()"
+                                    value="-">-
+                                    </button>
+                                    <input value="1" max="5" type="number" name="" id="quantidade" placeholder="Qtd">
+                                    <button 
+                                    type="button" class="increment-decrement" onclick="aumentaQuantidade()"
+                                    value="+">+
+                                    </button>
+                                </td> -->
+                                <td class="produto-valor-total">
+                                    R$50,00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="produto">
+                                    Título
+                                </td>
+                                
+                                <td class="produto-valor">
+                                    R$50,00
+                                </td>
+                                <td >
+                                    <input value="1" max="5" type="number" class="produto-quantidade">
                                 </td>
                                 <!-- <td class="form-group">
                                     <button 
@@ -73,34 +99,11 @@
                                     value="+">+
                                     </button>
                                 </td> -->
-                                <td>
+                                <td class="produto-valor-total">
                                     R$50,00
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    Título
-                                </td>
-                                
-                                <td>
-                                    R$50,00
-                                </td>
-                                <td>
-                                    teste
-                                    <!-- <button 
-                                    type="button" class="increment-decrement" onclick="diminuiQuantidade()"
-                                    value="-">-
-                                    </button>
-                                    <input type="number" name="" id="quantidade" placeholder="Qtd">
-                                    <button 
-                                    type="button" class="increment-decrement" onclick="aumentaQuantidade()"
-                                    value="+">+
-                                    </button> -->
-                                </td>
-                                <td>
-                                    R$50,00
-                                </td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>
@@ -108,7 +111,7 @@
             <section id="inferior-carrinho">
                 <div class="cupom form-group">
                     <label for="input-cupom">Cupom de desconto</label>
-                    <input id="input-cupom" class="form-control" type="text" placeholder="Insira aqui o Cupom">
+                    <input id="input-cupom" class="desconto-cupom form-control" type="text" placeholder="Insira aqui o Cupom">
                     <button class="btn btn-lg">Adicionar cupom</button>
                 </div>
                 <div class="resumo-carrinho">
@@ -122,10 +125,10 @@
                         <tbody>
                             <tr>
                                 <td>subtotal</td>
-                                <td>R$36,50</td>
+                                <td class="subtotal-valor">R$36,50</td>
                             </tr>
                             <tr>
-                                <td>entrega</td>
+                                <td class="frete-valor">entrega</td>
                                 <td><nav class="navbar">
                                     <ul class="navbar-nav">
                                         <li class="nav-item">
@@ -138,8 +141,8 @@
                                 </nav></td>
                             </tr>
                             <tr>
-                                <td>Total</td>
-                                <td>R$36,50</td>
+                                <td class="total-titulo">Total</td>
+                                <td class="total-valor">R$36,50</td>
                             </tr>
                         </tbody>
                     </table>
@@ -373,6 +376,30 @@
                 event.preventDefault();
                 
             }
+
+            let produtosCarrinho = document.querySelector('.produto');
+            let total = document.querySelector('.total-valor');
+            let freteCarrinho = document.querySelector('.frete-valor');
+            let valor = document.querySelector('.produto-valor');
+            let descontoCupom = document.querySelector('.desconto-cupom');
+            let totalProdutos = 0;
+            
+                
+            const calcularTotalProdutos = () => {
+                let todosProdutos = parseFloat(document.querySelectorAll('.produto-valor'));
+                let todasQuantidades = document.querySelectorAll('.produto-quantidade');
+
+                totalProdutos = todosProdutos.reduce((acumulador, valorTotal) => {
+                    return acumulador + valorTotal
+                });
+            }
+
+            console.log(totalProdutos);
+
+            $(".total-valor").html(totalProdutos);
+            
+
         </script>
+        <script src="./js/carrinho.js"></script>
     </body>
 </html>

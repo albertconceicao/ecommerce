@@ -39,3 +39,33 @@ $('.vote').mouseleave(function(){
     $("#voto").html(val); // somente para teste
 });
 
+let produtosCarrinho = document.querySelector('produto');
+let total = document.querySelector('.total-valor');
+let freteCarrinho = document.querySelector('frete-valor');
+let valor = document.querySelector('produto-valor');
+let descontoCupom = document.querySelector('desconto-cupom');
+
+const adicionarCupom = () => {
+
+
+    total = 50;
+    console.log(total.value);
+
+    
+}
+
+const mostraFormaPagamento = (div, div2, div3) => {
+    let formaPagamento = document.getElementById(div);
+    let formaPagamento2 = document.getElementById(div2);
+    let formaPagamento3 = document.getElementById(div3);
+     if(formaPagamento.style.display === 'none'){
+        formaPagamento.style.display = 'block';
+        formaPagamento2.style.display = 'none';
+        formaPagamento3.style.display = 'none';
+     }else {
+        formaPagamento.style.display = 'none';
+        
+     }
+    event.preventDefault();
+    
+}
