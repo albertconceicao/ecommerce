@@ -30,6 +30,12 @@
                 $("header").load("header.html");
                 $("footer").load("footer.html");
             })
+            function adicionaValor (valor) {
+                
+            }
+            let valorCompra = 50.00;
+            adicionaValor();
+            
         </script>
         <script src="./qrcode.min.js"></script>
         <title>Carrinho</title>
@@ -57,7 +63,9 @@
                                 </td>
                                 
                                 <td class="produto-valor">
-                                    50.00
+                                    <script>
+                                        $(".produto-valor").html(valorCompra);
+                                    </script>  
                                 </td>
                                 <td >
                                     <input value="1" max="5" type="number" class="produto-quantidade">
@@ -74,7 +82,7 @@
                                     </button>
                                 </td> -->
                                 <td class="produto-valor-total">
-                                    50.00
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -83,10 +91,12 @@
                                 </td>
                                 
                                 <td class="produto-valor">
-                                    50.00
+                                    <script>
+                                        $(".produto-valor").html(valorCompra);
+                                    </script>
                                 </td>
                                 <td >
-                                    <input value="2" max="5" type="number" class="produto-quantidade">
+                                    <input value="2" max="5" type="number" class="produto-quantidade" onchange="">
                                 </td>
                                 <!-- <td class="form-group">
                                     <button 
@@ -99,7 +109,7 @@
                                     value="+">+
                                     </button>
                                 </td> -->
-                                <td class="produto-valor-total">
+                                <td class="produto-valor-total" onchange="formataValor(valor)">
                                     50.00
                                 </td>
                             </tr>
@@ -384,7 +394,10 @@
             let descontoCupom = document.querySelector('.desconto-cupom'); */
             let totalProdutos = 0;
            
-            const formataValor = (valor => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+           
+            function formataValor  (valor) {
+                return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            } 
             console.log(calcularTotalProdutos());
                 
              function calcularTotalProdutos () {

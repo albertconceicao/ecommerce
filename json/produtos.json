@@ -1,0 +1,105 @@
+{
+    "grupos": {
+        "nome": "informatica",
+        "subgrupos": [
+
+            {
+                "nome": "celulares",
+                "produtos": [
+                    {
+                        "nome": "celular-1",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "celular-2",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "celular-3",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "celular-4",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "celular-5",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    }
+                    
+                ]
+            },
+            {
+                "nome": "televisao",
+                "produtos": [
+                    {
+                        "nome": "smart-4k-43",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "smart-4k-32",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "smart-4k-65",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "smart-4k-70",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "smart-4k-80",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    }
+                    
+                ]
+            },
+            {
+                "nome": "som",
+                "produtos": [
+                    {
+                        "nome": "jbl",
+                        "preco": 700.00,
+                        "quantidade": 4
+                    },
+                    {
+                        "nome": "home-theater",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "echo-dot",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "Celular",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    },
+                    {
+                        "nome": "soundbar",
+                        "preco": 50.00,
+                        "quantidade": 2
+                    }
+                    
+                ]
+            }
+        ]
+    } 
+
+
+    
+}
+
