@@ -57,7 +57,7 @@
                                 </td>
                                 
                                 <td class="produto-valor">
-                                    R$50,00
+                                    50.00
                                 </td>
                                 <td >
                                     <input value="1" max="5" type="number" class="produto-quantidade">
@@ -74,7 +74,7 @@
                                     </button>
                                 </td> -->
                                 <td class="produto-valor-total">
-                                    R$50,00
+                                    50.00
                                 </td>
                             </tr>
                             <tr>
@@ -83,10 +83,10 @@
                                 </td>
                                 
                                 <td class="produto-valor">
-                                    R$50,00
+                                    50.00
                                 </td>
                                 <td >
-                                    <input value="1" max="5" type="number" class="produto-quantidade">
+                                    <input value="2" max="5" type="number" class="produto-quantidade">
                                 </td>
                                 <!-- <td class="form-group">
                                     <button 
@@ -100,7 +100,7 @@
                                     </button>
                                 </td> -->
                                 <td class="produto-valor-total">
-                                    R$50,00
+                                    50.00
                                 </td>
                             </tr>
                             
@@ -125,7 +125,7 @@
                         <tbody>
                             <tr>
                                 <td>subtotal</td>
-                                <td class="subtotal-valor">R$36,50</td>
+                                <td class="subtotal-valor"></td>
                             </tr>
                             <tr>
                                 <td class="frete-valor">entrega</td>
@@ -142,7 +142,7 @@
                             </tr>
                             <tr>
                                 <td class="total-titulo">Total</td>
-                                <td class="total-valor">R$36,50</td>
+                                <td class="total-valor"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -191,7 +191,7 @@
                         <div class="navbar navbar-expand">
                           <ul class="navbar-nav">
                             <li class="nav-item">
-                              <a href="" class="nav-link" onclick="mostraFormaPagamento('cartao-credito','boleto-bancario','pagamento-pix')">
+                              <a href="" class="nav-link" onclick="mostraFormaPagamentoCarrinho('cartao-credito','boleto-bancario','pagamento-pix')">
                                 <div>
                                   <img src="./img/credit-card-solid.svg" alt="">
                                 </div>
@@ -199,7 +199,7 @@
                               </a>
                             </li>
                             <li class="nav-item">
-                              <a href="" class="nav-link" onclick="mostraFormaPagamento('boleto-bancario','pagamento-pix','cartao-credito')">
+                              <a href="" class="nav-link" onclick="mostraFormaPagamentoCarrinho('boleto-bancario','pagamento-pix','cartao-credito')">
                                 <div>
                                   <img src="./img/money-check-alt-solid.svg" alt="">
                                 </div>
@@ -207,7 +207,7 @@
                               </a> 
                             </li>
                             <li class="nav-item">
-                              <a href="#cartao-credito" class="nav-link" onclick="mostraFormaPagamento('pagamento-pix','cartao-credito','boleto-bancario')">
+                              <a href="#cartao-credito" class="nav-link" onclick="mostraFormaPagamentoCarrinho('pagamento-pix','cartao-credito','boleto-bancario')">
                                 <div>
                                   <img src="./img/money-check-alt-solid.svg" alt="">
                                 </div>
@@ -361,7 +361,7 @@
         </main>
         <footer id="footer"></footer>
         <script>
-            const mostraFormaPagamento = (div, div2, div3) => {
+            const mostraFormaPagamentoCarrinho = (div, div2, div3) => {
                 let formaPagamento = document.getElementById(div);
                 let formaPagamento2 = document.getElementById(div2);
                 let formaPagamento3 = document.getElementById(div3);
@@ -377,26 +377,41 @@
                 
             }
 
-            let produtosCarrinho = document.querySelector('.produto');
+            /* let produtosCarrinho = document.querySelector('.produto');
             let total = document.querySelector('.total-valor');
             let freteCarrinho = document.querySelector('.frete-valor');
             let valor = document.querySelector('.produto-valor');
-            let descontoCupom = document.querySelector('.desconto-cupom');
+            let descontoCupom = document.querySelector('.desconto-cupom'); */
             let totalProdutos = 0;
-            
+           
+            const formataValor = (valor => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+            console.log(calcularTotalProdutos());
                 
-            const calcularTotalProdutos = () => {
-                let todosProdutos = parseFloat(document.querySelectorAll('.produto-valor'));
+             function calcularTotalProdutos () {
+                let todosProdutos = document.querySelectorAll('.produto-valor');
+                
                 let todasQuantidades = document.querySelectorAll('.produto-quantidade');
 
-                totalProdutos = todosProdutos.reduce((acumulador, valorTotal) => {
-                    return acumulador + valorTotal
-                });
+                for (let posicao = 0; posicao < todosProdutos.length; posicao++){
+
+                    let umPreco = todosProdutos[posicao].innerHTML;
+                    console.log(umPreco);
+                    let umaQuantidade = parseFloat(todasQuantidades[posicao].value);
+                    console.log(umaQuantidade);
+                    let subtotal = umPreco * umaQuantidade;
+                    totalProdutos += subtotal;
+                }
+                console.log(totalProdutos);
+/* 
+                totalProdutos = todosProdutos.reduce((acumulador, valorAtual) => {
+                    return acumulador + valorAtual;
+                }, 0); */
+
+                return $(".subtotal-valor").html(formataValor(totalProdutos)), $(".total-valor").html(formataValor(totalProdutos));
+                
             }
-
-            console.log(totalProdutos);
-
-            $(".total-valor").html(totalProdutos);
+            
+            
             
 
         </script>
