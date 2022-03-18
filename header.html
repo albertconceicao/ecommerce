@@ -205,21 +205,10 @@
           </div>
         </div>
 
-        
-        <style>
-          #conteudo7, #conteudo8, #conteudo9, #conteudo10, #conteudo11, #conteudo12 {
-                      display: none;
-                      padding-left: 50px;
-                    }
-        </style>
         <!--Início Grupos Mobile-->
         <button id="botao-grupos" onclick="mostraFormaPagamento('grupos-mobile')" class="btn">
           Grupos
         </button>
-
-          <div id="teste" style="display: none;">
-            Eu apareci
-          </div>
         
         <div class="row" id="grupos-mobile" ><!--Início row 1 produtos-->
           <div class="col-md-12"><!-- Início Barra Lateral-->
@@ -415,53 +404,9 @@
                       }
                     });
                   
-                    const escondeLista = ((id) => {
-                      let menu = document.getElementById('conteudo'+id);
-                      if(menu.addEventListener("mouseout")){
-                        menu.style.display = 'none';
-                        menu.style.transition = '0.2s';
-                        event.preventDefault();
-                      }
-                    })
-
-                    
-                    
-                  
                 </script>
                 
 
-                  <!-- <ul class=" navbar-nav" >
-                      <li class="nav-item" id="subgrupo-lateral">
-                        <a href="" class="nav-link" >
-                          <span data-target="#subgrupo1 navbar-toggler" data-toggle="collapse">Grupo 1</span>
-                          
-                          <a href="" class="nav-link link-subgrupo">
-                            Subgrupo 1
-                          </a>
-                          <a href="" class="nav-link link-subgrupo">
-                            Subgrupo 2
-                          </a>
-                          <a href="" class="nav-link link-subgrupo">
-                            Subgrupo 3
-                          </a>
-                          
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#" class="nav-link">Dados Pessoais</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#" class="nav-link">Endereços</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#" class="nav-link">Trocar Senha</a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#" class="nav-link">Sair</a>
-                      </li>
-                      
-                      
-                  </ul> -->
               </nav><!--Fim primeira Barra de Navegação lateral-->
               <nav class="navbar"><!--Início segunda Barra de Navegação lateral-->
                   <ul class=" navbar-nav" >
@@ -483,271 +428,10 @@
           </div><!-- Fim da Barra Lateral-->
 
           <div class="col md-8"><!--Div Produtos-->
-            <!-- 
-            <div class="txtpre-grupo">
-              <h2>Subgrupo/Departamento</h2>
-              <p>Esta é uma descrição do produto fictício que será exibido em seu site em breve</p>
-            </div>
-
-            <div class="pre-grupo">
-              <div class="navbar navbar-expand" id="listagem-produtos">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a href="" class="nav-link">
-                      <i class="fas fa-list "></i>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="" class="nav-link">
-                      <i class="fas fa-th-large "></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="" id="filtro-produtos">
-                <form action="" class="form-group">
-                  <div>
-                    <span class="span-produtos">Ordenar por: </span>
-                    <select id="" class="form-control">
-                      <option selected>Padrão</option>
-                      <option>Opção 1</option>
-                      <option>Opção 2</option>
-                      <option>Opção 3</option>
-                      <option>Opção 4</option>
-                      <option>Opção 5</option>
-                    </select>
-                  </div>
-                  <div>
-                    <span class="span-produtos">Exibir: </span>
-                    <select id="" class="form-control">
-                      <option selected>15</option>
-                      <option>20</option>
-                      <option>25</option>
-                      <option>30</option>
-                      <option>50</option>
-                    </select>
-                  </div>
-                </form>
-              </div> -->
-
-            </div>
-
-            <!-- <div id="produtos">
-
-              <div class="row" >
-                <div class="col-md-4">
-                  <div class="card" >
-                      <img class="card-img-top img-fluid" height="120px" src="./img/image-2.jpg" alt="Card image cap">
-                      <div class="card-body">
-                        <a href="" class="card-title">Produto</a>
-                        <span id="codigo">Código: 12345</span>
-                        <p class="card-text">
-                          <div class="estrelas">
-                            <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                            <label for="cm_star-1"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                            <label for="cm_star-2"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                            <label for="cm_star-3"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                            <label for="cm_star-4"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                            <label for="cm_star-5"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                          </div>
-                            
-                            
-                        <span>
-                          Valor
-                        </span>
-                        <small>
-                          12x de Valor no Forma de Pagamento
-                        </small>
-                        <a href="produto.html" class="btn btn-primary">Comprar</a>
-                      </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card" >
-                    <img class="card-img-top img-fluid" height="120px" src="./img/image-2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <a href="" class="card-title">Produto</a>
-                      <span id="codigo">Código: 12345</span>
-                      <p class="card-text">
-                        <div class="estrelas">
-                          <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                          <label for="cm_star-1"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                          <label for="cm_star-2"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                          <label for="cm_star-3"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                          <label for="cm_star-4"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                          <label for="cm_star-5"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                        </div>
-                          
-                          
-                      <span>
-                        Valor
-                      </span>
-                      <small>
-                        12x de Valor no Forma de Pagamento
-                      </small>
-                      <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card" >
-                    <img class="card-img-top img-fluid" height="120px" src="./img/image-2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <a href="" class="card-title">Produto</a>
-                      <span id="codigo">Código: 12345</span>
-                      <p class="card-text">
-                        <div class="estrelas">
-                          <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                          <label for="cm_star-1"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                          <label for="cm_star-2"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                          <label for="cm_star-3"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                          <label for="cm_star-4"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                          <label for="cm_star-5"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                        </div>
-                          
-                          
-                      <span>
-                        Valor
-                      </span>
-                      <small>
-                        12x de Valor no Forma de Pagamento
-                      </small>
-                      <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-                </div>
-              </div>
-              <div class="row" >
-                <div class="col-md-4">
-                  <div class="card" >
-                      <img class="card-img-top img-fluid" height="120px" src="./img/image-2.jpg" alt="Card image cap">
-                      <div class="card-body">
-                        <a href="" class="card-title">Produto</a>
-                        <span id="codigo">Código: 12345</span>
-                        <p class="card-text">
-                          <div class="estrelas">
-                            <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                            <label for="cm_star-1"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                            <label for="cm_star-2"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                            <label for="cm_star-3"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                            <label for="cm_star-4"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                            <label for="cm_star-5"><i class="fa"></i></label>
-                            <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                          </div>
-                            
-                            
-                        <span>
-                          Valor
-                        </span>
-                        <small>
-                          12x de Valor no Forma de Pagamento
-                        </small>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                      </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card" >
-                    <img class="card-img-top img-fluid" height="120px" src="./img/image-2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <a href="" class="card-title">Produto</a>
-                      <span id="codigo">Código: 12345</span>
-                      <p class="card-text">
-                        <div class="estrelas">
-                          <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                          <label for="cm_star-1"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                          <label for="cm_star-2"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                          <label for="cm_star-3"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                          <label for="cm_star-4"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                          <label for="cm_star-5"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                        </div>
-                          
-                          
-                      <span>
-                        Valor
-                      </span>
-                      <small>
-                        12x de Valor no Forma de Pagamento
-                      </small>
-                      <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card" >
-                    <img class="card-img-top img-fluid" height="120px" src="./img/image-2.jpg" alt="Card image cap">
-                    <div class="card-body">
-                      <a href="" class="card-title">Produto</a>
-                      <span id="codigo">Código: 12345</span>
-                      <p class="card-text">
-                        <div class="estrelas">
-                          <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-                          <label for="cm_star-1"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-1" name="fb" value="1"/>
-                          <label for="cm_star-2"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-2" name="fb" value="2"/>
-                          <label for="cm_star-3"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-3" name="fb" value="3"/>
-                          <label for="cm_star-4"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-4" name="fb" value="4"/>
-                          <label for="cm_star-5"><i class="fa"></i></label>
-                          <input type="radio" id="cm_star-5" name="fb" value="5"/>
-                        </div>
-                          
-                          
-                      <span>
-                        Valor
-                      </span>
-                      <small>
-                        12x de Valor no Forma de Pagamento
-                      </small>
-                      <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-                </div>
-              </div>
-              
-            </div>  -->
             
+            </div>
 
-            <!-- <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1">Página anterior</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">Próxima</a>
-                </li>
-              </ul>
-            </nav> -->
+            
         </div>
         
         <script>
@@ -767,7 +451,7 @@
         <!--Fim Grupos Mobile-->
 
     </header><!-- Fim Barra de Navegação-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script>

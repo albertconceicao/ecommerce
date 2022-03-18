@@ -1,0 +1,19 @@
+{
+    "success": true,
+    "message": "data found",
+    "data": [{
+        "CODIGO": "01",
+        "DESCRI": "VEICULOS",
+        "FILIAL": "0101",
+        "VENDA": "S",
+        "QTRESERV": "0",
+        "PDESC": "0",
+        "PIMPNOTA": "0",
+        "SLDAVISO": "0",
+        "OBS": "",
+        "PRODUC": "S",
+        "MSGNOT": "",
+        "LOJA_ID": "",
+        "FLAG": ""
+    }]
+}

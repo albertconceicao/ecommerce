@@ -193,6 +193,11 @@ button#pesquisa-botao:hover{
 
 }
 
+#conteudo1, #conteudo2, #conteudo3, #conteudo4, #conteudo5, #conteudo6 {
+    display: none;
+    padding-left: 50px;
+  }
+
 /* 
 
 Navbar-Grupos
