@@ -351,7 +351,7 @@ a.card-title {
 a.card-title:hover {
     
 }
-#codigo  {
+span.codigo  {
     color:var(--gray);
     font-size: 0.8em;
 }

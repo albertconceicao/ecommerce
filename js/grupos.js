@@ -31,11 +31,19 @@ $.get("json/PRODUT.json", function (data) {
   } 
 
   function criaCard(titulo, codigo, valor) {
-    console.log(titulo);
-    console.log(codigo);
-    console.log(valor);
+    
 
-    /* const cardBody = querySelector(".card-body"); */
+    const cardBody = document.querySelector(".card-body");
+    
+    const cardSecao = document.querySelector("#produtos");
+
+
+    const cardLinhas = document.createElement("div");
+    cardLinhas.classList.add("row");
+
+    const cardLinhaProdutos = document.createElement("div");
+    cardLinhaProdutos.classList.add("col-md-4");
+   
 
     const card = document.createElement("div");
     card.classList.add("card");
@@ -45,18 +53,40 @@ $.get("json/PRODUT.json", function (data) {
     cardTitulo.innerHTML = titulo;
     
 
+    
     const cardCodigo = document.createElement("span");
     cardCodigo.classList.add("codigo");
-    cardCodigo.innerHTML = codigo;
+    cardCodigo.innerHTML = `Código: ${codigo}`;
 
     const cardValor = document.createElement("span");
     cardValor.classList.add("card-value");
-    cardValor.innerHTML = valor;
+    cardValor.innerHTML = `R$${valor}`;
 
+    const cardFormaPagamento = document.createElement("small");
+    cardFormaPagamento.classList.add("forma-pagamento");
+    cardFormaPagamento.innerHTML = "Teste";
 
-    card.appendChild(cardTitulo);
-    cardTitulo.appendChild(cardValor);
-    /* card.append(cardBody); */
+    const cardBotao = document.createElement("a");
+    cardBotao.classList.add("btn", "btn-primary");
+    cardBotao.innerHTML = "Teste Comprar"
+
+    console.log(titulo);
+    console.log(codigo);
+    console.log(valor);
+
+    
+    cardBody.appendChild(cardTitulo);
+    cardBody.appendChild(cardCodigo);
+    cardBody.appendChild(cardValor);
+    cardBody.appendChild(cardFormaPagamento);
+    cardBody.appendChild(cardBotao);
+
+    card.innerHTML = cardBody;
+/* 
+    cardLinhaProdutos.appendChild(card); */
+    /* cardLinhas.appendChild(cardLinhaProdutos);
+    cardSecao.appendChild(cardLinhas); */
+
     
     
   }
@@ -73,14 +103,5 @@ $.get("json/PRODUT.json", function (data) {
     valores += produto.VENDA;
     criaCard(produtos, codigos, valores);
   });
-/* 
-  $(".card-title").append(produtos);
 
-  const codigosArray = dataJsonProduto.data.forEach(codigo => codigos += codigo.CODIGO)
-  const valoresArray = dataJsonProduto.data.forEach(valor => valores += valor.VENDA)
-  console.log(produtos);
-  
-  
-  $("#codigo").html(`Código: ${codigos}`);
-  $(".card-value").html(valores); */
 })
