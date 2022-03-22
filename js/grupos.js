@@ -30,10 +30,18 @@ $.get("json/PRODUT.json", function (data) {
     return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   } 
 
-  function criaCard(titulo, codigo, valor) {
+  function criaCard(titulo, codigo, valor, imagem) {
     
+/*     const cardImage = `img class="card-img-top img-fluid" height="120px" src="${imagem}" alt="Card image cap">` */
+    
+    const cardImage = document.createElement("img");
+    cardImage.classList.add("card-img-top", "img-fluid");
+    cardImage.src = `${imagem}`;
+    cardImage.alt = `${titulo}`;
+    cardImage.style.height = '120px';
 
     const cardBody = document.querySelector(".card-body");
+    cardBody.style.backgroundColor = 'red';
     
     const cardSecao = document.querySelector("#produtos");
 
@@ -41,12 +49,13 @@ $.get("json/PRODUT.json", function (data) {
     const cardLinhas = document.createElement("div");
     cardLinhas.classList.add("row");
 
-    const cardLinhaProdutos = document.createElement("div");
-    cardLinhaProdutos.classList.add("col-md-4");
+    
    
 
     const card = document.createElement("div");
     card.classList.add("card");
+    
+    
 
     const cardTitulo = document.createElement("a");
     cardTitulo.classList.add("card-title");
@@ -68,11 +77,14 @@ $.get("json/PRODUT.json", function (data) {
 
     const cardBotao = document.createElement("a");
     cardBotao.classList.add("btn", "btn-primary");
-    cardBotao.innerHTML = "Teste Comprar"
+    cardBotao.innerHTML = "Comprar";
 
-    console.log(titulo);
-    console.log(codigo);
-    console.log(valor);
+    const cardProduto = document.createElement("div");
+    cardProduto.classList.add("col-md-4");
+
+    
+
+
 
     
     cardBody.appendChild(cardTitulo);
@@ -81,7 +93,14 @@ $.get("json/PRODUT.json", function (data) {
     cardBody.appendChild(cardFormaPagamento);
     cardBody.appendChild(cardBotao);
 
-    card.innerHTML = cardBody;
+    card.appendChild(cardImage);
+    card.appendChild(cardBody);
+    cardProduto.appendChild(card);
+    cardLinhas.appendChild(cardProduto);
+
+    console.log(cardLinhas);
+
+    
 /* 
     cardLinhaProdutos.appendChild(card); */
     /* cardLinhas.appendChild(cardLinhaProdutos);
@@ -91,17 +110,17 @@ $.get("json/PRODUT.json", function (data) {
     
   }
 
+  function espacoCards(cards) {
+
+  }
+
   const dataProdutoString = JSON.stringify(data);
   const dataJsonProduto = JSON.parse(dataProdutoString);
-  let produtos = "";
-  let codigos = "";
-  let valores = "";
+  
 
   const produtosArray = dataJsonProduto.data.forEach((produto) => {
-    produtos += produto.DESCRICAO;
-    codigos += produto.CODIGO;
-    valores += produto.VENDA;
-    criaCard(produtos, codigos, valores);
+    
+    criaCard(produto.DESCRICAO, produto.CODIGO, produto.VENDA, produto.IMAGEM);
   });
 
 })
