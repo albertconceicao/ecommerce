@@ -18,98 +18,12 @@ $.get("json/GRUPOS.json", function(data) {
 
    $("#link-grupo1").html(nomeGrupos);
   })
-
-  
-
- 
-  
     
 $.get("json/PRODUT.json", function (data) {
   
   function formataValor  (valor) {
     return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   } 
-
-  function criaCard(titulo, codigo, valor, imagem) {
-    
-/*     const cardImage = `img class="card-img-top img-fluid" height="120px" src="${imagem}" alt="Card image cap">` */
-    
-    const cardImage = document.createElement("img");
-    cardImage.classList.add("card-img-top", "img-fluid");
-    cardImage.src = imagem;
-    cardImage.alt = `${titulo}`;
-    cardImage.style.height = '120px';
-
-    const cardBody = document.querySelector(".card-body");
-    cardBody.style.backgroundColor = 'red';
-    
-    const cardSecao = document.querySelector("#produtos");
-
-
-    const cardLinhas = document.createElement("div");
-    cardLinhas.classList.add("row");
-
-    
-   
-
-    const card = document.querySelector(".card");
-/*     card.classList.add("card");
- */    
-    
-
-    const cardTitulo = document.createElement("a");
-    cardTitulo.classList.add("card-title");
-    cardTitulo.innerHTML = titulo;
-    
-
-    
-    const cardCodigo = document.createElement("span");
-    cardCodigo.classList.add("codigo");
-    cardCodigo.innerHTML = `Código: ${codigo}`;
-
-    const cardValor = document.createElement("span");
-    cardValor.classList.add("card-value");
-    cardValor.innerHTML = `R$${valor}`;
-
-    const cardFormaPagamento = document.createElement("small");
-    cardFormaPagamento.classList.add("forma-pagamento");
-    cardFormaPagamento.innerHTML = "Teste";
-
-    const cardBotao = document.createElement("a");
-    cardBotao.classList.add("btn", "btn-primary");
-    cardBotao.innerHTML = "Comprar";
-
-    const cardProduto = document.createElement("div");
-    cardProduto.classList.add("col-md-4");
-
-    
-
-
-
-    
-    cardBody.appendChild(cardTitulo);
-    cardBody.appendChild(cardCodigo);
-    cardBody.appendChild(cardValor);
-    cardBody.appendChild(cardFormaPagamento);
-    cardBody.appendChild(cardBotao);
-
-    card.appendChild(cardImage);
-    card.appendChild(cardBody);
-    /* cardProduto.appendChild(card);
-    cardLinhas.innerHTML(cardProduto); */
-
-    console.log(card);
-
-    
-/* 
-    cardLinhaProdutos.appendChild(card); */
-    /* cardLinhas.appendChild(cardLinhaProdutos);
-    cardSecao.appendChild(cardLinhas); */
-
-    
-    
-  }
-
   function retornaCard(titulo, codigo, valor, imagem) {
     const cardProduto = 
     `
@@ -148,16 +62,8 @@ $.get("json/PRODUT.json", function (data) {
     `
     ;
   const cardSecao = document.querySelector("#produtos");
-  const cardLinha = document.querySelector(".row");
-  const cardColuna = document.querySelector(".card-body");
 
-  /* cardSecao.appendChild(cardLinha);
-  cardLinha.appendChild(cardProduto); */
   cardSecao.innerHTML += cardProduto;
-/*   cardColuna.appendChild(cardLinha);
- */
-  console.log(cardColuna);
-  
   }
 
   const dataProdutoString = JSON.stringify(data);
