@@ -25,7 +25,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
     <script src="./js/index.js"></script>
-    <script src="./js/grupos.js"></script>
     <script>
       $(function() {
         $("header").load("header.html");
@@ -68,195 +67,7 @@
                 <h2 class="">Grupos</h2>
                 
       
-                <nav class="navbar"><!--Início primeira Barra de Navegação lateral-->
-                  
-                  <div id="lista-teste"></div>
-                  <div id="grupo1">
-                    <ul class="navbar-nav">
-                      <li class="nav-item" id="link-grupo1">
-                        <!-- <a href="" class="nav-link" onclick="mostrarLista('1')" >
-                          Vestuário
-                        </a> -->
-                      </li>
-                    </ul>
-                    <div id="conteudo1">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Masculino
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Feminino
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Infantil
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div id="grupo2">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a href="" class="nav-link" onclick="mostrarLista('2')" >
-                          Informática
-                        </a>
-                      </li>
-                    </ul>
-                    <div id="conteudo2">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Notebooks
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Celulares
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Roteadores
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div id="grupo3">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a href="" class="nav-link" onclick="mostrarLista('3')" >
-                          Papeis de parede
-                        </a>
-                      </li>
-                    </ul>
-                    <div id="conteudo3">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Sala
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Quarto
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Cozinha
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div id="grupo4">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a href="" class="nav-link" onclick="mostrarLista('4')" >
-                          Eletrônicos
-                        </a>
-                      </li>
-                    </ul>
-                    <div id="conteudo4">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Televisão
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Som
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Monitor
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div id="grupo5">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a href="" class="nav-link" onclick="mostrarLista('5')" >
-                          Ferramentas
-                        </a>
-                      </li>
-                    </ul>
-                    <div id="conteudo5">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Furadeira
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Parafusadeira
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link" >
-                            Serra Circular
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div id="grupo6">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <a href="" class="nav-link" onclick="mostrarLista('6')">
-                          Sala e Cozinha
-                        </a>
-                      </li>
-                    </ul>
-                    <div id="conteudo6">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Mesa e Cadeira
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link">
-                            Sofá
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="" class="nav-link" >
-                            Fogão e Geladeira
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  
-                 
-                  
-                  <script>
-                      const mostrarLista = ((id)=>{
-                      let menu = document.getElementById('conteudo'+id);
-                        if(menu.style.display == 'block'){
-                          menu.style.display = 'none';
-                          event.preventDefault();
-                        } else {
-                          menu.style.display = 'block';
-                          menu.style.transitionDelay = '0.3s';
-                          event.preventDefault();
-                        }
-                      });
-                  </script>
-                   
-                </nav><!--Fim primeira Barra de Navegação lateral-->
+                <!--Fim primeira Barra de Navegação lateral-->
                 <nav class="navbar"><!--Início segunda Barra de Navegação lateral-->
                     <ul class=" navbar-nav" >
                         <li class="nav-item">
@@ -362,6 +173,7 @@
    
    <script src="./services/busca.js"></script>
    <script src="./js/carrinho.js"></script>
-  
+   <script src="./js/produtos.js"></script>
+   <script src="./js/grupos.js"></script>
   </body>
 </html>

@@ -1,78 +1,56 @@
-
-
-
 $.get("json/GRUPOS.json", function(data) {
     let dataString = JSON.stringify(data);
     const dataJson =  JSON.parse(dataString);
-/*     console.log(dataJson.data);
- */
-    const itemGrupo = document.querySelector("#lista-teste");
-    let grupos = "";
-    const linkGrupo = dataJson.data.forEach((grupo, x) => grupos += grupo.DESCRI);
+
+
+    const retornaGrupos = (grupo, subgrupo, codigo) => {
+        //retornar a estrutura HTML do link alterando somente o nome do grupo;
+        const containerListaGrupos = `<nav class "navbar"></nav>`
+        const listaGrupos = `
+        <div id="conteudo${codigo}">
+          <ul class="navbar-nav">
+            <li class="nav-item" id="link-grupo1">
+              <!-- <a href="" class="nav-link" onclick="mostrarLista(${codigo})" >
+                ${grupo}
+              </a> -->
+            </li>
+          </ul>
+          <div id="conteudo${codigo}">
+            <ul class="navbar-nav">
+          ${
+            subgrupo.forEach((subgrupo) => {
+                `<li class="nav-item">
+                    <a href="" class="nav-link">
+                    ${subgrupo}
+                    </a>
+                </li>
+                `
+            })
+          }
+          
+            </ul>
+          </div>
+        </div>
+      `
+        console.log(listaGrupos);
+        console.log(containerListaGrupos.appendChild += listaGrupos);
+
+
+        
+
+        //criar um forEach para cada subgrupo retornar a estrutura do link
+
+    }
+    const linkGrupo = dataJson.data.forEach(grupo => retornaGrupos(grupo.DESCRI, grupo.SUBGRUPOS, grupo.CODIGO)
+    );
 /*     console.log(grupos);
  */
-    const nomeGrupos = `<a href="" class="nav-link" onclick="mostrarLista('1')" >${grupos}</a>`
+    
+    
     /* return `<a href="" class="nav-link" onclick="mostrarLista('1')" >${dataJson.data[0].DESCRI}</a>`; */
 
+
+
     
 
-   $("#link-grupo1").html(nomeGrupos);
   })
-    
-$.get("json/PRODUT.json", function (data) {
-  
-  function formataValor  (valor) {
-    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  } 
-  function retornaCard(titulo, codigo, valor, imagem) {
-    const cardProduto = 
-    `
-    <div class="col-lg-4">
-      <div class="card" >
-        <img class="card-img-top img-fluid" height="120px" src="${imagem}" alt="Card image cap">
-        <div class="card-body">
-          <a href="" name="title" class="card-title">${titulo}</a>
-          <span class="codigo">Código: ${codigo}</span>
-          <p class="card-text">
-            <div class="estrelas">
-              <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-              <label for="cm_star-1"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-1" name="fb" value="1"/>
-              <label for="cm_star-2"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-2" name="fb" value="2"/>
-              <label for="cm_star-3"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-3" name="fb" value="3"/>
-              <label for="cm_star-4"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-4" name="fb" value="4"/>
-              <label for="cm_star-5"><i class="fa"></i></label>
-              <input type="radio" id="cm_star-5" name="fb" value="5"/>
-            </div>
-              
-              
-          <span>
-            ${valor}
-          </span>
-          <small>
-            12x de Valor no Forma de Pagamento
-          </small>
-          <a href="produto.html" class="btn btn-primary">Comprar</a>
-        </div>
-      </div>
-    </div>
-    `
-    ;
-  const cardSecao = document.querySelector("#produtos");
-
-  cardSecao.innerHTML += cardProduto;
-  }
-
-  const dataProdutoString = JSON.stringify(data);
-  const dataJsonProduto = JSON.parse(dataProdutoString);
-  
-
-  const produtosArray = dataJsonProduto.data.forEach((produto) => {
-    
-    retornaCard(produto.DESCRICAO, produto.CODIGO, produto.VENDA, produto.IMAGEM);
-  });
-
-})

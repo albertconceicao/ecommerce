@@ -1,9 +1,36 @@
 {
     "success": true,
     "message": "data found",
-    "data": [{
+    "data": [
+        {
         "CODIGO": "01",
         "DESCRI": "VEICULOS",
+        "SUBGRUPOS": [{
+            "01": "NOVOS",
+            "02": "SEMINOVOS",
+            "03": "USADOS"
+        }],
+        "FILIAL": "0101",
+        "VENDA": "S",
+        "QTRESERV": "0",
+        "PDESC": "0",
+        "PIMPNOTA": "0",
+        "SLDAVISO": "0",
+        "OBS": "",
+        "PRODUC": "S",
+        "MSGNOT": "",
+        "LOJA_ID": "",
+        "FLAG": ""
+    },
+    {
+        "CODIGO": "02",
+        "DESCRI": "PEÇAS",
+        "SUBGRUPOS": [{
+            "01": "FREIOS",
+            "02": "PASTILHAS",
+            "03": "LIMPADOR DE PARABRISA",
+            "04": "FILTROS DE AR CONDICIONADO"
+        }],
         "FILIAL": "0101",
         "VENDA": "S",
         "QTRESERV": "0",
