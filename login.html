@@ -67,7 +67,7 @@
                         <input type="password" class="form-control" id="senha-cadastro" placeholder="Digite sua senha">
                     </div>
                     
-                    <button id="btn-login" class="container-fluid btn btn-lg ">Cadastrar Conta</button>
+                    <button id="btn-login" class="container-fluid btn btn-lg " onclick="validaCadastro(event)">Cadastrar Conta</button>
                     <small>
                         <a href="" class="nav-link" onclick="criarConta('login' ,'cadastro')">Já tem uma conta? clique para fazer login</a>
                     </small>
@@ -86,7 +86,7 @@
                         
                         <label for="usuario-login">Usuário: </label>
                         <input type="text" class="form-control" id="usuario-login" aria-describedby="emailHelp"
-                            placeholder="Digite seu usuário">
+                            placeholder="Digite seu usuário" >
                         <small id="emailHelp" class="form-text text-muted">Não compartilhe seu usuário com
                             ninguém.</small>
                     </div>
@@ -98,7 +98,7 @@
                         <input type="checkbox" class="form-check-input" id="lembrar-usuario">
                         <label class="form-check-label" for="lembrar-usuario">Lembrar meu usuário e senha</label>
                     </div>
-                    <button id="btn-login" class="container-fluid btn btn-lg ">Entrar</button>
+                    <button id="btn-login" class="container-fluid btn btn-lg " onclick="validaLogin(event)">Entrar</button>
                     <small>
                         <a href="" class="nav-link" onclick="criarConta('cadastro' ,'login')">Não tem uma conta, crie cliando aqui</a>
                     </small>
@@ -124,6 +124,8 @@
         </div>
     </main>
     <footer id="footer"></footer>
+
+    <script src="./js/validacoes.js"></script>
     
 </body>
 </html>

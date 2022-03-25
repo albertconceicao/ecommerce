@@ -112,46 +112,51 @@ $.get("json/PRODUT.json", function (data) {
 
   function retornaCard(titulo, codigo, valor, imagem) {
     const cardProduto = 
-    `<div class="card" >
-      <img class="card-img-top img-fluid" height="120px" src="${imagem}" alt="Card image cap">
-      <div class="card-body">
-        <a href="" name="title" class="card-title">${titulo}</a>
-        <span class="codigo">Código: ${codigo}</span>
-        <p class="card-text">
-          <div class="estrelas">
-            <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
-            <label for="cm_star-1"><i class="fa"></i></label>
-            <input type="radio" id="cm_star-1" name="fb" value="1"/>
-            <label for="cm_star-2"><i class="fa"></i></label>
-            <input type="radio" id="cm_star-2" name="fb" value="2"/>
-            <label for="cm_star-3"><i class="fa"></i></label>
-            <input type="radio" id="cm_star-3" name="fb" value="3"/>
-            <label for="cm_star-4"><i class="fa"></i></label>
-            <input type="radio" id="cm_star-4" name="fb" value="4"/>
-            <label for="cm_star-5"><i class="fa"></i></label>
-            <input type="radio" id="cm_star-5" name="fb" value="5"/>
-          </div>
-            
-            
-        <span>
-          ${valor}
-        </span>
-        <small>
-          12x de Valor no Forma de Pagamento
-        </small>
-        <a href="produto.html" class="btn btn-primary">Comprar</a>
+    `
+    <div class="col-lg-4">
+      <div class="card" >
+        <img class="card-img-top img-fluid" height="120px" src="${imagem}" alt="Card image cap">
+        <div class="card-body">
+          <a href="" name="title" class="card-title">${titulo}</a>
+          <span class="codigo">Código: ${codigo}</span>
+          <p class="card-text">
+            <div class="estrelas">
+              <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
+              <label for="cm_star-1"><i class="fa"></i></label>
+              <input type="radio" id="cm_star-1" name="fb" value="1"/>
+              <label for="cm_star-2"><i class="fa"></i></label>
+              <input type="radio" id="cm_star-2" name="fb" value="2"/>
+              <label for="cm_star-3"><i class="fa"></i></label>
+              <input type="radio" id="cm_star-3" name="fb" value="3"/>
+              <label for="cm_star-4"><i class="fa"></i></label>
+              <input type="radio" id="cm_star-4" name="fb" value="4"/>
+              <label for="cm_star-5"><i class="fa"></i></label>
+              <input type="radio" id="cm_star-5" name="fb" value="5"/>
+            </div>
+              
+              
+          <span>
+            ${valor}
+          </span>
+          <small>
+            12x de Valor no Forma de Pagamento
+          </small>
+          <a href="produto.html" class="btn btn-primary">Comprar</a>
+        </div>
       </div>
-  </div>`
+    </div>
+    `
     ;
   const cardSecao = document.querySelector("#produtos");
   const cardLinha = document.querySelector(".row");
-  const cardColuna = document.querySelector(".col-md-4");
+  const cardColuna = document.querySelector(".card-body");
 
-  cardSecao.appendChild(cardLinha);
-  cardLinha.appendChild(cardProduto);
-  cardColuna.appendChild(cardProduto);
-
-  console.log(cardSecao);
+  /* cardSecao.appendChild(cardLinha);
+  cardLinha.appendChild(cardProduto); */
+  cardSecao.innerHTML += cardProduto;
+/*   cardColuna.appendChild(cardLinha);
+ */
+  console.log(cardColuna);
   
   }
 

@@ -327,6 +327,9 @@ span.span-produtos{
 
 #produtos {
     margin: 20px;
+    display: flex;
+    flex-direction: grid;
+
 }
 
 .card {
@@ -593,6 +596,10 @@ section#conteudo {
       display: block;
       width: 100%;
     }
+
+    #produtos {
+        flex-direction: column;
+    }
    
    }
 
@@ -621,6 +628,10 @@ section#conteudo {
     form.col-md-12.input-group input {
         font-size: 0.60rem;
     }
+   /*  #produtos {
+        flex-direction: column;
+    } */
+    
   }
 
 /*  // Medium devices (tablets, less than 992px) */
@@ -628,7 +639,9 @@ section#conteudo {
     #grupos-web img {
         height: 40px;
     }
-   
+   /*  #produtos {
+        flex-direction: column;
+    } */
     
   
    }
