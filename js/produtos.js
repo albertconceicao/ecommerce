@@ -13,8 +13,8 @@ $.get("json/PRODUT.json", function (data) {
       <div class="card" >
         <img class="card-img-top img-fluid" height="120px" src="${imagem}" alt="Card image cap">
         <div class="card-body">
-          <a href="" name="title" class="card-title">${titulo}</a>
-          <span class="codigo">Código: ${codigo}</span>
+          <a href=""  name="title" class="card-title">${titulo}</a>
+          <span  class="codigo">Código: ${codigo}</span>
           <p class="card-text">
             <div class="estrelas">
               <input type="radio" id="cm_star-empty" name="fb" value="" checked/>
@@ -31,13 +31,13 @@ $.get("json/PRODUT.json", function (data) {
             </div>
               
               
-          <span>
+          <span data-valor="${valor}" >
             ${valor}
           </span>
           <small>
             12x de Valor no Forma de Pagamento
           </small>
-          <a href="" id="${codigo}" class="btn btn-primary">Comprar</a>
+          <a href="" data-codigo="${codigo}" data-titulo="${titulo}"  data-valor="${valor}" id="${codigo}-botao" class="btn btn-primary">Comprar</a>
         </div>
       </div>
     </div>
@@ -57,19 +57,31 @@ $.get("json/PRODUT.json", function (data) {
     };
     
     // let botaoCompra = 
-    let botaoCompra = document.getElementById('010109');
-    let botaoCompraProdutos = document.getElementById(`${codigo}`);
+    let botaoCompra = document.getElementById('010109-botao');
+    let botaoCompraProdutos = document.getElementById(`${codigo}-botao`);
+    
 
     // console.log(botaoCompra, botaoCompraProdutos);
     
 
     botaoCompraProdutos.addEventListener('click', (event) => {
       event.preventDefault();
-      adicionaCarrinho(titulo, codigo, valor);
-    })
+      let tituloProduto = botaoCompraProdutos.getAttribute("data-titulo");
+      let codigoProduto = botaoCompraProdutos.getAttribute("data-codigo");
+      // let codigoProduto = document.getElementById(`${codigo}`).id;
+      let valorProduto = botaoCompraProdutos.getAttribute("data-valor");
+      
+      adicionaCarrinho(tituloProduto, codigoProduto, valorProduto);
+    });
+
     botaoCompra.addEventListener('click', (event) => {
       event.preventDefault();
-      adicionaCarrinho(titulo, codigo, valor);
+      let tituloProduto = botaoCompra.getAttribute("data-titulo");
+      let codigoProduto = botaoCompra.getAttribute("data-codigo");
+      // let codigoProduto = document.getElementById(`${codigo}`).id;
+      let valorProduto = botaoCompra.getAttribute("data-valor");
+      
+      adicionaCarrinho(tituloProduto, codigoProduto, valorProduto);
     });
 
     console.log(titulo, codigo, valor);
