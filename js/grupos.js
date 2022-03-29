@@ -32,8 +32,8 @@ $.get("json/GRUPOS.json", function(data) {
           </div>
         </div>
       `
-        console.log(listaGrupos);
-        console.log(containerListaGrupos.appendChild += listaGrupos);
+        // console.log(listaGrupos);
+        // console.log(containerListaGrupos.appendChild += listaGrupos);
 
 
         

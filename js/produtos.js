@@ -5,6 +5,8 @@ $.get("json/PRODUT.json", function (data) {
     return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   } 
   function retornaCard(titulo, codigo, valor, imagem) {
+    
+    
     const cardProduto = 
     `
     <div class="col-lg-4">
@@ -35,15 +37,44 @@ $.get("json/PRODUT.json", function (data) {
           <small>
             12x de Valor no Forma de Pagamento
           </small>
-          <a href="produto.html" id="${codigo}" class="btn btn-primary">Comprar</a>
+          <a href="" id="${codigo}" class="btn btn-primary">Comprar</a>
         </div>
       </div>
     </div>
     `
     ;
-  const cardSecao = document.querySelector("#produtos");
+    const cardSecao = document.querySelector("#produtos");
 
-  cardSecao.innerHTML += cardProduto;
+    cardSecao.innerHTML += cardProduto;
+    
+
+    const adicionaCarrinho = (produto, codigo, valor) => {
+
+      let produtoCarrinho = [];
+      produtoCarrinho.push(produto, codigo, valor);
+      console.log(produtoCarrinho);
+      localStorage.setItem('produto', JSON.stringify(produtoCarrinho))
+    };
+    
+    // let botaoCompra = 
+    let botaoCompra = document.getElementById('010109');
+    let botaoCompraProdutos = document.getElementById(`${codigo}`);
+
+    // console.log(botaoCompra, botaoCompraProdutos);
+    
+
+    botaoCompraProdutos.addEventListener('click', (event) => {
+      event.preventDefault();
+      adicionaCarrinho(titulo, codigo, valor);
+    })
+    botaoCompra.addEventListener('click', (event) => {
+      event.preventDefault();
+      adicionaCarrinho(titulo, codigo, valor);
+    });
+
+    console.log(titulo, codigo, valor);
+
+  
   }
 
   const dataProdutoString = JSON.stringify(data);
@@ -56,20 +87,8 @@ $.get("json/PRODUT.json", function (data) {
   });
 
   
-  let botaoCompra = document.querySelector(`#${produto}`);
-  let produtoCarrinho = [];
-
-  const adicionaCarrinho = (produto) => {
-    produto.preventDefault();
-    produtoCarrinho.push({produto});
-    console.log(produtoCarrinho);
-  };
-
-  botaoCompra.addEventListener('click', (event) => {
-    event.preventDefault();
-    console.log('Acionou');
-    adicionaCarrinho(codigo);
-  });
+  
+  
 
 
 })

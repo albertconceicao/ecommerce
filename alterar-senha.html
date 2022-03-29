@@ -99,10 +99,10 @@
                 <div id="alterar-senha" class="form-group">
             
                     <label for="pre-senha">Nova senha</label>
-                    <input type="password" class="form-control" placeholder="Digite a nova senha" id="pre-senha">
+                    <input type="password" class="form-control" placeholder="Digite a nova senha" id="pre-senha"pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[!@#$%&*_=+=]).{6,12}$" title="A " >
             
                     <label for="nova-senha">Confirmar senha:</label>
-                    <input type="password" class="form-control" placeholder="As senhas precisam ser iguais" id="nova-senha">
+                    <input type="password" class="form-control" placeholder="As senhas precisam ser iguais" id="nova-senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[!@#$%&*_=+=]).{6,12}$" title="A senha deve conter pelo menos uma letra maíuscula, uma letra minúscula, um número e não deve ter símbolos">
                     
                     <button class="btn btn-lg" type="submit">Alterar senha</button>
                     
