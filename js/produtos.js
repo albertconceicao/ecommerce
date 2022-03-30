@@ -52,9 +52,11 @@ $.get("json/PRODUT.json", function (data) {
 
       let produtosCarrinho = JSON.parse(localStorage.getItem('produtos')) || [];
       produtosCarrinho.push({
+        id:  + 1,
         produto: produto, 
         codigo: codigo, 
-        valor: valor
+        valor: valor,
+        quantidade: 1
       });
       console.log(produtosCarrinho);
       localStorage.setItem('produtos', JSON.stringify(produtosCarrinho))
