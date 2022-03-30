@@ -1,36 +1,91 @@
-let produtosCarrinho = document.querySelector('produto');
-const produtoCarrinho = document.createElement("tr");
-const valor = document.createElement("td");
-const produto = document.createElement("td");
-const quantidade = document.createElement("td");
-const valorTotal = document.createElement("td");
-
-console.log()
 
 
 
+function formataValor  (valor) {
+    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+} 
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    console.log("Entrou")
-    let nome = event.target.elements['title'].innerHTML;
-    console.log(nome);
-    let quantidade = event.target.elements['quantidade'].value;
 
-    criaElemento(nome, quantidade);
+
+let produtosLocalStorage = JSON.parse(localStorage.getItem("produtos"));
+produtosLocalStorage.forEach(produto => {
+    // return console.log(Object.values(produtosLocalStorage))
 })
+console.log(JSON.parse(localStorage.getItem("produtos"))[0].quantidade);
 
-function criaElemento(produto, quantidade) {
+let tabelaCarrinho = document.getElementById('produtos-carrinho');
 
-    valor.classList.add("produto-valor");
-    produto.classList.add("produto");
-    quantidade.classList.add("produto-quantidade");
-    valorTotal.classList.add("produto-valor-total");
-    produtoCarrinho.classList.add("produto-carrinho");
-
-    produtoCarrinho.appendChild(produto, valor, quantidade, valorTotal);
-
-    console.log(produtoCarrinho);
+let arrayTotalCompras = [];
 
 
-}
+let totalCompra = document.querySelector('.total-valor');
+let subtotalCompra = document.querySelector('.subtotal-valor');
+let totalBoleto = document.querySelector('.total-valor-boleto');
+let totalPix = document.querySelector('.total-valor-pix');
+
+
+produtosLocalStorage.forEach(produto => {
+
+    let tituloProduto = produto.produto;
+    let valorProduto = produto.valor;
+    let quantidadeProduto = 1;
+    let totalProduto = valorProduto * quantidadeProduto;
+
+    
+
+    const corpoTabelaCarrinho = `
+        <tbody>
+        <tr class="produto-carrinho">
+            <td class="produto">
+                ${tituloProduto}
+            </td>
+            
+            <td class="produto-valor">
+                ${valorProduto}
+            </td>
+             <td class="form-group">
+                <button 
+                type="button" class="increment-decrement" onclick="diminuiQuantidade()"
+                value="-">-
+                </button>
+                <input value="" max="5" type="number" name="" id="quantidade${produto.codigo}" placeholder="Qtd">
+                <button 
+                type="button" class="increment-decrement" onclick="aumentaQuantidade()"
+                value="+">+
+                </button>
+            </td> 
+            <td class="produto-valor-total">
+                ${formataValor(totalProduto)}
+            </td>
+        </tr>
+    </tbody>
+    `;
+    
+    tabelaCarrinho.innerHTML += corpoTabelaCarrinho;
+    arrayTotalCompras.push(totalProduto);
+    let quantidadeProdutoInput = document.getElementById('quantidade');
+
+    const aumentaQuantidade = () => {
+    console.log(quantidade);
+    return quantidadeProdutoInput.value.innerHTML = quantidade++;
+    };
+
+    const diminuiQuantidade = () => {
+    console.log('Diminuiu');
+    return quantidadeProdutoInput.innerHTML = quantidade--;
+    };
+});
+
+
+
+const somaTotalCompras = arrayTotalCompras.reduce((acc, valorAtual) => {
+    return acc + valorAtual;
+}, 0);
+
+
+subtotalCompra.innerHTML = formataValor(somaTotalCompras);
+totalCompra.innerHTML = formataValor(somaTotalCompras);
+totalBoleto.innerHTML = formataValor(somaTotalCompras);
+totalPix.innerHTML = formataValor(somaTotalCompras);
+
+
