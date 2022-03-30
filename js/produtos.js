@@ -50,10 +50,14 @@ $.get("json/PRODUT.json", function (data) {
 
     const adicionaCarrinho = (produto, codigo, valor) => {
 
-      let produtoCarrinho = [];
-      produtoCarrinho.push(produto, codigo, valor);
-      console.log(produtoCarrinho);
-      localStorage.setItem('produto', JSON.stringify(produtoCarrinho))
+      let produtosCarrinho = JSON.parse(localStorage.getItem('produtos')) || [];
+      produtosCarrinho.push({
+        produto: produto, 
+        codigo: codigo, 
+        valor: valor
+      });
+      console.log(produtosCarrinho);
+      localStorage.setItem('produtos', JSON.stringify(produtosCarrinho))
     };
     
     // let botaoCompra = 
@@ -84,7 +88,6 @@ $.get("json/PRODUT.json", function (data) {
       adicionaCarrinho(tituloProduto, codigoProduto, valorProduto);
     });
 
-    console.log(titulo, codigo, valor);
 
   
   }
