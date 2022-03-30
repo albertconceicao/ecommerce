@@ -30,11 +30,11 @@
                 $("header").load("header.html");
                 $("footer").load("footer.html");
             })
-            function adicionaValor (valor) {
+            // function adicionaValor (valor) {
                 
-            }
-            let valorCompra = 50.00;
-            adicionaValor();
+            // }
+            // let valorCompra = 50.00;
+            // adicionaValor();
             
         </script>
         <script src="./qrcode.min.js"></script>
@@ -47,7 +47,7 @@
             <h2>Meu carrinho</h2>
             <div class="row">
                 <div class="col-lg-12">
-                    <table>
+                    <table id="produtos-carrinho">
                         <thead>
                             <tr>
                                 <th class="produto">Produto</th>
@@ -56,65 +56,7 @@
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="produto-carrinho">
-                                <td class="produto">
-                                    Título
-                                </td>
-                                
-                                <td class="produto-valor">
-                                    <script>
-                                        $(".produto-valor").html(valorCompra);
-                                    </script>  
-                                </td>
-                                <td >
-                                    <input value="1" max="5" type="number" class="produto-quantidade">
-                                </td>
-                                <!-- <td class="form-group">
-                                    <button 
-                                    type="button" class="increment-decrement" onclick="diminuiQuantidade()"
-                                    value="-">-
-                                    </button>
-                                    <input value="1" max="5" type="number" name="" id="quantidade" placeholder="Qtd">
-                                    <button 
-                                    type="button" class="increment-decrement" onclick="aumentaQuantidade()"
-                                    value="+">+
-                                    </button>
-                                </td> -->
-                                <td class="produto-valor-total">
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="produto">
-                                    Título
-                                </td>
-                                
-                                <td class="produto-valor">
-                                    <script>
-                                        $(".produto-valor").html(valorCompra);
-                                    </script>
-                                </td>
-                                <td >
-                                    <input value="2" max="5" type="number" class="produto-quantidade" onchange="">
-                                </td>
-                                <!-- <td class="form-group">
-                                    <button 
-                                    type="button" class="increment-decrement" onclick="diminuiQuantidade()"
-                                    value="-">-
-                                    </button>
-                                    <input type="number" name="" id="quantidade" placeholder="Qtd">
-                                    <button 
-                                    type="button" class="increment-decrement" onclick="aumentaQuantidade()"
-                                    value="+">+
-                                    </button>
-                                </td> -->
-                                <td class="produto-valor-total" onchange="formataValor(valor)">
-                                    50.00
-                                </td>
-                            </tr>
-                            
-                        </tbody>
+                        
                     </table>
                 </div>
             </div>
@@ -294,7 +236,7 @@
                         
                         <div class="total">
                             <span>total:</span>
-                            <span>R$1.458,00</span>
+                            <span class="total-valor-boleto"></span>
                         </div>
                         <button class="btn btn-lg">
                             Fechar pedido
@@ -359,7 +301,7 @@
                         </div>
                         <div class="total">
                             <span>total:</span>
-                            <span>R$1.458,00</span>
+                            <span class="total-valor-pix">R$1.458,00</span>
                         </div>
                         
                         
@@ -386,47 +328,6 @@
                 event.preventDefault();
                 
             }
-
-            /* let produtosCarrinho = document.querySelector('.produto');
-            let total = document.querySelector('.total-valor');
-            let freteCarrinho = document.querySelector('.frete-valor');
-            let valor = document.querySelector('.produto-valor');
-            let descontoCupom = document.querySelector('.desconto-cupom'); */
-            let totalProdutos = 0;
-           
-           
-            function formataValor  (valor) {
-                return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-            } 
-            console.log(calcularTotalProdutos());
-                
-             function calcularTotalProdutos () {
-                let todosProdutos = document.querySelectorAll('.produto-valor');
-                
-                let todasQuantidades = document.querySelectorAll('.produto-quantidade');
-
-                for (let posicao = 0; posicao < todosProdutos.length; posicao++){
-
-                    let umPreco = todosProdutos[posicao].innerHTML;
-                    console.log(umPreco);
-                    let umaQuantidade = parseFloat(todasQuantidades[posicao].value);
-                    console.log(umaQuantidade);
-                    let subtotal = umPreco * umaQuantidade;
-                    totalProdutos += subtotal;
-                }
-                console.log(totalProdutos);
-/* 
-                totalProdutos = todosProdutos.reduce((acumulador, valorAtual) => {
-                    return acumulador + valorAtual;
-                }, 0); */
-
-                return $(".subtotal-valor").html(formataValor(totalProdutos)), $(".total-valor").html(formataValor(totalProdutos));
-                
-            }
-            
-            
-            
-
         </script>
         <script src="./js/carrinho.js"></script>
     </body>
