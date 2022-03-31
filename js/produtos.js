@@ -71,7 +71,7 @@ $.get("json/PRODUT.json", function (data) {
     
 
     botaoCompraProdutos.addEventListener('click', (event) => {
-      event.preventDefault();
+      
       let tituloProduto = botaoCompraProdutos.getAttribute("data-titulo");
       let codigoProduto = botaoCompraProdutos.getAttribute("data-codigo");
       // let codigoProduto = document.getElementById(`${codigo}`).id;
@@ -81,7 +81,7 @@ $.get("json/PRODUT.json", function (data) {
     });
 
     botaoCompra.addEventListener('click', (event) => {
-      event.preventDefault();
+      
       let tituloProduto = botaoCompra.getAttribute("data-titulo");
       let codigoProduto = botaoCompra.getAttribute("data-codigo");
       // let codigoProduto = document.getElementById(`${codigo}`).id;
