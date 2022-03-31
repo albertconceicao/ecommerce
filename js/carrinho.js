@@ -43,12 +43,12 @@ produtosLocalStorage.forEach(produto => {
             <td class="produto-valor">
                 ${valorProduto}
             </td>
-             <td class="form-group">
+             <td class="quantidade">
                 <button 
                 type="button" class="increment-decrement" onclick="diminuiQuantidade()"
                 value="-">-
                 </button>
-                <input value="" max="5" type="number" name="" id="quantidade${produto.codigo}" placeholder="Qtd">
+                <input value="" max="5" type="number" name="" class="quantidade" placeholder="Qtd">
                 <button 
                 type="button" class="increment-decrement" onclick="aumentaQuantidade()"
                 value="+">+

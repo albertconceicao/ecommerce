@@ -22,6 +22,14 @@ td {
     border-radius: 0.25rem;
     border: 1px solid var(--gray3);
 }
+button.increment-decrement {
+    color: var(--white);
+    background: var(--gray);
+    transition: filter 0.2s;
+    border: 1px solid var(--gray3);
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+}
 main h2 {
     border-bottom: 1px solid var(--gray3);
     margin-bottom: 1.5rem;
@@ -81,7 +89,7 @@ div.resumo-carrinho button.btn.btn-lg {
     transition: filter 0.2s;
 }
 div.resumo-carrinho button.btn.btn-lg:hover {
-    filter: 1.5rembrightness(0.9);
+    filter: 1.5rem brightness(0.9);
 }
 #inferior-carrinho a.nav-link {
     text-transform: uppercase;
@@ -311,18 +319,49 @@ section#pagamento-pix div#qrcode img{
     
     height: 12rem;
 }
+
+@media (max-width: 500px) {
+    html {
+        overflow-x: hidden;
+    }
+    table {
+        font-size: 0.7rem;
+    }
+    th {
+        padding: 0.4rem 1rem;
+        overflow-x: hidden;
+    }
+    td {
+        padding: 0.4rem 0.9rem;
+        
+    }
+    input.quantidade {
+        padding: 0;
+        width: 0.9rem;
+    }
+}
+
 @media (max-width: 768px) {
+
+    html {
+        overflow-x: hidden;
+    }
     
     table {
         font-size: 0.7rem;
     }
     th {
         padding: 0.5rem 1rem;
+        overflow-x: hidden;
     }
     
     td {
         padding: 0.5rem 1rem;
         
+    }
+    input.quantidade {
+        padding: 0;
+        width: 1rem;
     }
     .produto {
         width: 300px;
@@ -330,8 +369,7 @@ section#pagamento-pix div#qrcode img{
     .cupom {
         width: 100%;
     }
-    .cupom label {
-    }
+   
     table#fechamento-carrinho {
         width: 100%;
     }
