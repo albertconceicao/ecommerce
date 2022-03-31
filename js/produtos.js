@@ -37,7 +37,7 @@ $.get("json/PRODUT.json", function (data) {
           <small>
             12x de Valor no Forma de Pagamento
           </small>
-          <a href="" data-codigo="${codigo}" data-titulo="${titulo}"  data-valor="${valor}" id="${codigo}-botao" class="btn btn-primary">Comprar</a>
+          <a href="carrinho.html" data-codigo="${codigo}" data-titulo="${titulo}"  data-valor="${valor}" id="${codigo}-botao" class="btn btn-primary">Comprar</a>
         </div>
       </div>
     </div>
