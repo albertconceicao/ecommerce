@@ -30,6 +30,10 @@ button.increment-decrement {
     border-radius: 0.5rem;
     padding: 0.2rem;
 }
+td.produto-quantidade input  {
+    padding: 0;
+    width: 3rem;
+}
 main h2 {
     border-bottom: 1px solid var(--gray3);
     margin-bottom: 1.5rem;
@@ -134,10 +138,6 @@ button#finalizar-compra.btn.btn-lg {
 }
 footer {
     clear: both;
-}
-#botoes-carrinho {
-}
-#botoes {
 }
 
 div.navbar.navbar-expand {
@@ -335,9 +335,9 @@ section#pagamento-pix div#qrcode img{
         padding: 0.4rem 0.9rem;
         
     }
-    input.quantidade {
+    td.produto-quantidade input  {
         padding: 0;
-        width: 0.9rem;
+        width: 1rem;
     }
 }
 
@@ -359,7 +359,7 @@ section#pagamento-pix div#qrcode img{
         padding: 0.5rem 1rem;
         
     }
-    input.quantidade {
+    td.produto-quantidade input {
         padding: 0;
         width: 1rem;
     }
@@ -376,7 +376,15 @@ section#pagamento-pix div#qrcode img{
     button#mais-produtos.btn.btn-lg, button#finalizar-compra.btn.btn-lg {
         display: block;
         width: 100%;
+        
     }
+
+    a#texto-finalizar-compra {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 30px;
+    }
+
     section#forma-pagamento span{
         font-size: 0.6rem;
     }

@@ -52,7 +52,7 @@ $.get("json/PRODUT.json", function (data) {
 
       let produtosCarrinho = JSON.parse(localStorage.getItem('produtos')) || [];
       produtosCarrinho.push({
-        id:  + 1,
+        id:  Math.random() * (10-0) + 0,
         produto: produto, 
         codigo: codigo, 
         valor: valor,
