@@ -6,19 +6,13 @@ function formataValor  (valor) {
 
 let produtosLocalStorage = JSON.parse(localStorage.getItem("produtos"));
 console.log(produtosLocalStorage);
-produtosLocalStorage.forEach(produto => {
-    // return console.log(Object.values(produtosLocalStorage))
-})
 
 let tabelaCarrinho = document.getElementById('produtos-carrinho');
 
 let arrayTotalCompras = [];
 
 
-let totalCompra = document.querySelector('.total-valor');
-let subtotalCompra = document.querySelector('.subtotal-valor');
-let totalBoleto = document.querySelector('.total-valor-boleto');
-let totalPix = document.querySelector('.total-valor-pix');
+
 
 
 produtosLocalStorage.forEach(produto => {
@@ -28,7 +22,7 @@ produtosLocalStorage.forEach(produto => {
     let tituloProduto = produto.produto;
     let codigoProduto = produto.codigo;
     let valorProduto = produto.valor;
-    let quantidadeProduto = 1;
+    let quantidade = produto.quantidade;
     let totalProduto = produto.quantidade * valorProduto;
     
     let indexador = 1;
@@ -36,7 +30,7 @@ produtosLocalStorage.forEach(produto => {
    
     const corpoTabelaCarrinho = `
         <tbody>
-        <tr class="produto-carrinho">
+        <tr class="produto-carrinho" id="${codigoProduto}">
             <td class="produto">
                 ${tituloProduto}
             </td>
@@ -46,43 +40,82 @@ produtosLocalStorage.forEach(produto => {
             </td>
              <td class="produto-quantidade">
                 <button 
-                type="button" class="increment-decrement" onclick="somaQuantidade(-1)"
+                type="button" class="increment-decrement" onclick="somaQuantidade(-1, '${codigoProduto}')"
                 value="-">-
                 </button>
-                <input min="0" value="1" valueAsNumber="1" type="number" name="" class="quantidade-${codigoProduto}" placeholder="Qtd" disabled>
+                <input min="0" value="${quantidade}"  type="number" name="" class="quantidade-${codigoProduto}" placeholder="Qtd" disabled>
                 <button 
-                type="button" class="increment-decrement" onclick="somaQuantidade(1)"
+                type="button" class="increment-decrement" onclick="somaQuantidade(1, '${codigoProduto}')"
                 value="+">+
                 </button>
             </td> 
-            <td class="produto-valor-total">
+            <td class="produto-valor-total-${codigoProduto}">
                 ${formataValor(totalProduto)}
+                <img src="./img/window-close-solid.svg" data-toggle="modal" data-target="#modal-remove-item" class="remove-item" alt="Remover produto" onclick="removeItem('${codigoProduto}')">
             </td>
         </tr>
     </tbody>
     `;
-    function somaQuantidade(quantidade) {
-
-        document.querySelector(`quantidade-${codigoProduto}`).valueAsNumber += quantidade;
-        
-        let quantidadeStorage = JSON.parse(localStorage.getItem("produtos"));
-        
-
-        quantidadeStorage.forEach(produto => {
-            localStorage.setItem("produtos", produto.quantidade += quantidade)
-        })
-
-    }
+    
     tabelaCarrinho.innerHTML += corpoTabelaCarrinho;
     arrayTotalCompras.push(totalProduto);
+    console.log(totalProduto);
     
      
     
     
     
 });
-// let quantidadeProdutoInput = Number(document.querySelector('.quantidade-010109').value);
-// console.log(quantidadeProdutoInput);
+
+let totalCompra = document.querySelector('.total-valor');
+let subtotalCompra = document.querySelector('.subtotal-valor');
+let totalBoleto = document.querySelector('.total-valor-boleto');
+let totalPix = document.querySelector('.total-valor-pix');
+
+function atualizaTotais () {
+    
+    let totalPedido = 0;
+    produtosLocalStorage.forEach(item => {
+        totalPedido += item.quantidade*item.valor
+    })
+    subtotalCompra.innerHTML = formataValor(totalPedido);
+    totalCompra.innerHTML = formataValor(totalPedido);
+    totalBoleto.innerHTML = formataValor(totalPedido);
+    totalPix.innerHTML = formataValor(totalPedido);
+}
+atualizaTotais();
+function somaQuantidade(quantidade, codigoProduto) {
+
+    document.querySelector(`.quantidade-${codigoProduto}`).valueAsNumber += quantidade;
+    
+    let quantidadeProduto = produtosLocalStorage.find(item=> item.codigo == codigoProduto);
+    if(quantidadeProduto.quantidade + quantidade == 0){
+        removeItem(codigoProduto);
+        console.log('Removeu');
+    }else {
+        quantidadeProduto.quantidade += quantidade;
+        localStorage.setItem("produtos", JSON.stringify(produtosLocalStorage));
+        
+        let calculoTotalProduto = document.querySelector(`.produto-valor-total-${codigoProduto}`);
+    
+        calculoTotalProduto.innerHTML = `${formataValor(quantidadeProduto.quantidade*quantidadeProduto.valor)} <img src="./img/window-close-solid.svg" data-toggle="modal" data-target="#modal-remove-item" class="remove-item" alt="Remover produto" onclick="removeItem('${codigoProduto}')"> `;
+    }
+    atualizaTotais();
+
+
+}
+
+function removeItem(codigoProduto) {
+
+    
+    let quantidadeProduto = produtosLocalStorage.find(item=> item.codigo === codigoProduto);
+    let indiceProduto = produtosLocalStorage.indexOf(quantidadeProduto);
+    produtosLocalStorage.splice(indiceProduto, 1);
+    localStorage.setItem("produtos", JSON.stringify(produtosLocalStorage));
+
+    document.getElementById(`${codigoProduto}`).remove();
+    atualizaTotais();
+}
 
 
 
@@ -91,27 +124,7 @@ produtosLocalStorage.forEach(produto => {
 
 
 
-const aumentaQuantidade = (quantidade) => {
-    console.log(valor);
-    return quantidade = quantidade + 1;
-};
 
-    const diminuiQuantidade = () => {
-    console.log('Diminuiu');
-    return quantidadeProdutoInput.innerHTML = quantidade--;
-    };
-
-const somaTotalCompras = arrayTotalCompras.reduce((acc, valorAtual) => {
-    return acc + valorAtual;
-}, 0);
-
-
-subtotalCompra.innerHTML = formataValor(somaTotalCompras);
-totalCompra.innerHTML = formataValor(somaTotalCompras);
-totalBoleto.innerHTML = formataValor(somaTotalCompras);
-totalPix.innerHTML = formataValor(somaTotalCompras);
-
-let produtosCarrinho = JSON.parse(localStorage.getItem("produtos"));
 
 const limpaCarrinho = () => localStorage.removeItem("produtos");
 const adicionaPedido = (pedido) => {
@@ -121,16 +134,20 @@ const adicionaPedido = (pedido) => {
 
 
 const adicionaFormaPagamento = (formaPagamento) => {
-    // const pedidoCarrinho = produtosCarrinho.map(produto => {
-    //     return {...produto, totalPedido: somaTotalCompras ,formaPagamento: formaPagamento};
-    // })
+    let nomes = [];
+    produtosLocalStorage.forEach(produto => {
+        nomes.push(produto.produto)
+    });
+    
+    let somaTotalCompras = document.querySelector('.total-valor').innerText;
     let pedidosCarrinho = JSON.parse(localStorage.getItem("pedidos")) || [];
 
     pedidosCarrinho.push({
-        numeroPedido: Math.random(),
-        ...produtosCarrinho,
-        totalPedido: somaTotalCompras,
-        formaPagamento: formaPagamento
+        numero: Math.random() * (10-0) + 1,
+        total: somaTotalCompras,
+        formaPagamento: formaPagamento,
+        nomeProdutos: nomes,
+        ...produtosLocalStorage
     })
 
     adicionaPedido(pedidosCarrinho);

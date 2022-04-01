@@ -9,20 +9,29 @@ console.log(pedidos);
 let tabelaPedido = document.getElementById('pedidos');
 
 pedidos.forEach(pedido => {
+
+    let numeroPedidoArray = [];
+    let decimal = '.';
+    let numeroPedido = pedido.numero.toString();
+    numeroPedidoArray.push(numeroPedido.split(''));
+    numeroPedidoArray[0].splice(1,1);
+    let numeroPedidoLetra = numeroPedidoArray.toString();
+    let numeroPedidoFormatado = numeroPedidoLetra.replace(/[^0-9]/g, '')
+    console.log(numeroPedidoFormatado);
     const pedidosTabela = `
         <tbody>
         <tr>
             <td class="nav-item">
                 <a class="nav-link" href="">
-                    ${pedido.numeroPedido}
+                    ${numeroPedidoFormatado}
                 </a>
             </td>
             <td>
-                Título
+                ${pedido.nomeProdutos}
             </td>
             
             <td>
-                ${formataValor(pedido.totalPedido)}
+                ${pedido.total}
             </td>
             <td>
                 13/03/2022

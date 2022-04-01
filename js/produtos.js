@@ -37,7 +37,28 @@ $.get("json/PRODUT.json", function (data) {
           <small>
             12x de Valor no Forma de Pagamento
           </small>
-          <a href="carrinho.html" data-codigo="${codigo}" data-titulo="${titulo}"  data-valor="${valor}" id="${codigo}-botao" class="btn btn-primary">Comprar</a>
+          <a href="#" data-codigo="${codigo}" data-titulo="${titulo}"  data-valor="${valor}" id="${codigo}-botao" class="btn btn-primary">Comprar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="${codigo}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"   aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Produto já adicionado ao carrinho</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              ${titulo} já foi adicionado ao carrinho
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar para página</button>
+          </div>
         </div>
       </div>
     </div>
@@ -51,15 +72,29 @@ $.get("json/PRODUT.json", function (data) {
     const adicionaCarrinho = (produto, codigo, valor) => {
 
       let produtosCarrinho = JSON.parse(localStorage.getItem('produtos')) || [];
-      produtosCarrinho.push({
-        id:  Math.random() * (10-0) + 0,
-        produto: produto, 
-        codigo: codigo, 
-        valor: valor,
-        quantidade: 1
-      });
+
+      let codigoProdutosCarrinho = produtosCarrinho.filter(item=> item.codigo === codigo);
+
+      console.log(codigoProdutosCarrinho);
+
+      if(codigoProdutosCarrinho.length === 0){
+
+        produtosCarrinho.push({
+          id:  Math.random() * (10-0) + 0,
+          produto: produto, 
+          codigo: codigo, 
+          valor: valor,
+          quantidade: 1
+        });
+        localStorage.setItem('produtos', JSON.stringify(produtosCarrinho));
+      }
+      else {
+        console.log('Produto existente no carrinho');
+        $(`#${codigo}`).modal({
+          show: true
+        });
+      }
       console.log(produtosCarrinho);
-      localStorage.setItem('produtos', JSON.stringify(produtosCarrinho))
     };
     
     // let botaoCompra = 
