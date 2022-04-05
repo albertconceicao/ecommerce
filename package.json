@@ -1,0 +1,23 @@
+{
+  "name": "ecommerce-mithra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "qrcode.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mithra-erp/ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mithra-erp/ecommerce/issues"
+  },
+  "homepage": "https://github.com/mithra-erp/ecommerce#readme",
+  "dependencies": {
+    "correios-brasil": "^2.2.2"
+  }
+}
