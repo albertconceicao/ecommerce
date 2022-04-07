@@ -211,3 +211,37 @@ aside h2 {
       display: none;
     }
 }
+
+@media (max-width: 991.97px) { 
+    form.col-md-12.input-group input {
+        margin: 20px 0;
+        font-size: 1rem;
+        width: fit-content;
+    }
+    .btn-group {
+      display: none;
+    }
+
+    h6 {
+      margin-top: 20px;
+      text-transform: uppercase;
+    }
+
+    div.input-group {
+      margin: 20px 0 20px 0;
+    }
+
+    div#grupos-web.container-fluid {
+      display: none;
+    }
+
+    button#dropdownMenu2.btn.btn-secondary.dropdown-toggle {
+      display: block;
+      width: 100%;
+    }
+
+    #produtos {
+        flex-direction: column;
+    }
+   
+   }
