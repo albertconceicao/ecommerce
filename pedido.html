@@ -24,7 +24,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="./CSS/stylesheet.css">
         <link rel="stylesheet" href="./CSS/carrinho.css">
-        <link rel="stylesheet" href="./CSS/pedidos.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script>
             $(function () {
@@ -32,35 +31,33 @@
                 $("footer").load("footer.html");
             })
         </script>
-        <title>Meus pedidos</title>
+        <script src="./qrcode.min.js"></script>
+        <!-- <script src="./js/bundle.js"></script> -->
+        <title>Pedidos</title>
     </head>
     <body>
         <header id="header"></header>
 
         <main class="container">
-            <h2>Meus pedidos</h2>
+            <h2 class="titulo-pedido">Pedido</h2>
             <div class="row">
                 <div class="col-lg-12">
-                    <table id="pedidos">
+                    <table id="pedido">
                         <thead>
                             <tr>
-                                <th class="numero-pedido">Número do pedido</th>
-                                <th>Data do pedido</th>
-                                <th>Prazo</th>
-                                <th>Status</th>
+                                <th class="produto">Produto</th>
+                                <th>Preço</th>
+                                <th>Quantidade</th>
                                 <th>Total</th>
                             </tr>
                         </thead>
                         
-                            
                     </table>
-                  
                 </div>
             </div>
-            
         </main>
-
         <footer id="footer"></footer>
+        <script src="./js/pedido.js"></script>
+        <script src="./js/frete.js"></script>
     </body>
-    <script src="./js/pedidos.js"></script>
 </html>

@@ -132,9 +132,25 @@ const adicionaPedido = (pedido) => {
     limpaCarrinho();
 };
 
+// Datas disponíveis
+
+let Hoje = new Date();
+Hoje.setDate(Hoje.getDate());
+//string apenas de data em um formato determinado pelo browser
+let Today = Hoje.toDateString();
+// string apenas de data no formato localizado do seu sistema
+let Today2 = Hoje.toLocaleDateString();
+
+let dataTracinho = Today2.replace(new RegExp("/","g"), "-"); 
+
+console.log (Today);
+console.log (Today2);
+console.log (dataTracinho);
+
 
 const adicionaFormaPagamento = (formaPagamento) => {
     let nomes = [];
+    
     produtosLocalStorage.forEach(produto => {
         nomes.push(produto.produto)
     });
@@ -142,15 +158,19 @@ const adicionaFormaPagamento = (formaPagamento) => {
     let somaTotalCompras = document.querySelector('.total-valor').innerText;
     let pedidosCarrinho = JSON.parse(localStorage.getItem("pedidos")) || [];
 
+  
+
     pedidosCarrinho.push({
         numero: Math.random() * (10-0) + 1,
         total: somaTotalCompras,
         formaPagamento: formaPagamento,
         nomeProdutos: nomes,
+        data: Today2,
         ...produtosLocalStorage
     })
 
     adicionaPedido(pedidosCarrinho);
     console.log(pedidosCarrinho)
+    // window.location.href="pedidos.html"
 
 }

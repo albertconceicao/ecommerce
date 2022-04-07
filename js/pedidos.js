@@ -27,17 +27,16 @@ pedidos.forEach(pedido => {
                 </a>
             </td>
             <td>
-                ${pedido.nomeProdutos}
+            ${pedido.data}
             </td>
-            
+            <td>
+            13/03/2022
+            </td>
+            <td>
+            Entregue
+            </td>
             <td>
                 ${pedido.total}
-            </td>
-            <td>
-                13/03/2022
-            </td>
-            <td>
-                Entregue
             </td>
         </tr>
     `;
