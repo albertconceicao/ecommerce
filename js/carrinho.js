@@ -171,6 +171,6 @@ const adicionaFormaPagamento = (formaPagamento) => {
 
     adicionaPedido(pedidosCarrinho);
     console.log(pedidosCarrinho)
-    // window.location.href="pedidos.html"
+    window.location.href="pedidos.html"
 
 }

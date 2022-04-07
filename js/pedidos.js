@@ -22,7 +22,7 @@ pedidos.forEach(pedido => {
         <tbody>
         <tr>
             <td class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="pedido.html">
                     ${numeroPedidoFormatado}
                 </a>
             </td>
