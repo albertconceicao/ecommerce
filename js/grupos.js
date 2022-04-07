@@ -5,6 +5,24 @@ $.get("json/GRUPOS.json", function(data) {
 
     const retornaGrupos = (grupo, subgrupo, codigo) => {
         //retornar a estrutura HTML do link alterando somente o nome do grupo;
+        // console.log(grupo);
+        // console.log(subgrupo[0]["01"]);
+        // console.log(subgrupo[0]);
+        let subgruposLista = [];
+        for (let subgrupos in subgrupo[0]) {
+          // subgruposLista.push(subgrupo[0][subgrupos])
+          subgruposLista = `
+          <li class="nav-item">
+              <a href="" class="nav-link">
+                ${subgrupo[0][subgrupos]}
+              </a>
+          </li>
+          `
+          
+          console.log(subgruposLista)
+        };
+        const subgrupos = subgrupo[0];
+        // console.log(subgrupos);
         const containerListaGrupos = `<nav class "navbar"></nav>`
         const listaGrupos = `
         <div id="conteudo${codigo}">
@@ -16,24 +34,15 @@ $.get("json/GRUPOS.json", function(data) {
             </li>
           </ul>
           <div id="conteudo${codigo}">
-            <ul class="navbar-nav">
-          ${
-            subgrupo.forEach((subgrupo) => {
-                `<li class="nav-item">
-                    <a href="" class="nav-link">
-                    ${subgrupo}
-                    </a>
-                </li>
-                `
-            })
-          }
-          
-            </ul>
-          </div>
-        </div>
-      `
+          ${`
+           <li class="nav-item">
+             <a href="" class="nav-link">
+                ${subgruposLista}
+               </a>
+           </li>
+           `}`
         // console.log(listaGrupos);
-        // console.log(containerListaGrupos.appendChild += listaGrupos);
+        console.log(containerListaGrupos.appendChild += listaGrupos);
 
 
         

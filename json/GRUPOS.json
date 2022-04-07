@@ -2,7 +2,7 @@
     "success": true,
     "message": "data found",
     "data": [
-        {
+    {
         "CODIGO": "01",
         "DESCRI": "VEICULOS",
         "SUBGRUPOS": [{
@@ -25,7 +25,8 @@
     {
         "CODIGO": "02",
         "DESCRI": "PEÇAS",
-        "SUBGRUPOS": [{
+        "SUBGRUPOS": [
+            {
             "01": "FREIOS",
             "02": "PASTILHAS",
             "03": "LIMPADOR DE PARABRISA",

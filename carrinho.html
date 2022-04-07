@@ -38,6 +38,7 @@
             
         </script>
         <script src="./qrcode.min.js"></script>
+        <!-- <script src="./js/bundle.js"></script> -->
         <title>Carrinho</title>
     </head>
     <body>
@@ -119,11 +120,21 @@
                                     </div>
                                     <div class="modal-body form-group">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="00000-000" aria-label="00000-000" aria-describedby="basic-addon2">
+                                            <input id="entrada-cep" type="text" class="form-control" placeholder="00000-000" aria-label="00000-000" aria-describedby="basic-addon2">
                                             <div class="input-group-append">
-                                              <button class="btn btn-secondary" type="button">Calcular</button>
+                                              <button class="btn btn-secondary"
+                                              onclick="consultarCep();calcularPrecoPrazo()" type="button">Calcular</button>
                                             </div>
-                                          </div>
+                                        </div>
+                                        <div id="retorno-cep">
+                                            <span class="logradouro"></span>
+                                            <span class="bairro"></span>
+                                            <span class="localidade"></span>
+                                            <span class="uf"></span>
+                                            <span class="preco"></span>
+                                            <span class="prazo"></span>
+
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -334,5 +345,6 @@
             }
         </script>
         <script src="./js/carrinho.js"></script>
+        <script src="./js/frete.js"></script>
     </body>
 </html>
