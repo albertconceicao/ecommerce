@@ -89,6 +89,7 @@ div#grupos-web.container-fluid {
     padding: 5px 0;
     margin:0 auto;
     box-shadow: 0 0 1em rgba(0, 0, 0, .5);
+    text-transform: capitalize;
 /*     box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, .5);
  */}
 #grupos-web {
@@ -127,7 +128,7 @@ div#grupos-web.container-fluid {
     background-size: 2em; */
 }
 
-#conteudo1, #conteudo2, #conteudo3, #conteudo4, #conteudo5, #conteudo6 {
+#conteudo1, #conteudo2, #conteudo3, #conteudo4, #conteudo5, #conteudo6, #conteudo01, #conteudo02, #conteudo03, #conteudo04, #conteudo05, #conteudo06 {
     display: none;
     padding-left: 50px;
   }
@@ -184,6 +185,7 @@ aside h2 {
     color: #000;
     border-bottom: 0.5px solid lightgray;
     transition: 0.3s;
+    text-transform: capitalize;
 }
 #aside-nav nav a.nav-link:hover {
     padding-left: 20px;

@@ -12,18 +12,18 @@ pedidos.forEach(pedido => {
 
     let numeroPedidoArray = [];
     let decimal = '.';
-    let numeroPedido = pedido.numero.toString();
-    numeroPedidoArray.push(numeroPedido.split(''));
-    numeroPedidoArray[0].splice(1,1);
-    let numeroPedidoLetra = numeroPedidoArray.toString();
-    let numeroPedidoFormatado = numeroPedidoLetra.replace(/[^0-9]/g, '')
-    console.log(numeroPedidoFormatado);
+    let numeroPedido = pedido.numero
+    // numeroPedidoArray.push(numeroPedido.split(''));
+    // numeroPedidoArray[0].splice(1,1);
+    // let numeroPedidoLetra = numeroPedidoArray.toString();
+    // let numeroPedidoFormatado = numeroPedidoLetra.replace(/[^0-9]/g, '')
+    
     const pedidosTabela = `
         <tbody>
         <tr>
             <td class="nav-item">
-                <a class="nav-link" href="pedido.html">
-                    ${numeroPedidoFormatado}
+                <a class="nav-link" href="pedido.html?pedido=${numeroPedido}">
+                    ${numeroPedido}
                 </a>
             </td>
             <td>

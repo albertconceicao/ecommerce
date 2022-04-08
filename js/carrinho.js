@@ -5,8 +5,8 @@ function formataValor  (valor) {
 
 
 let produtosLocalStorage = JSON.parse(localStorage.getItem("produtos"));
+// console.log(produtosLocalStorage);
 console.log(produtosLocalStorage);
-
 let tabelaCarrinho = document.getElementById('produtos-carrinho');
 
 let arrayTotalCompras = [];
@@ -59,7 +59,7 @@ produtosLocalStorage.forEach(produto => {
     
     tabelaCarrinho.innerHTML += corpoTabelaCarrinho;
     arrayTotalCompras.push(totalProduto);
-    console.log(totalProduto);
+    // console.log(totalProduto);
     
      
     
@@ -143,9 +143,9 @@ let Today2 = Hoje.toLocaleDateString();
 
 let dataTracinho = Today2.replace(new RegExp("/","g"), "-"); 
 
-console.log (Today);
-console.log (Today2);
-console.log (dataTracinho);
+// console.log (Today);
+// console.log (Today2);
+// console.log (dataTracinho);
 
 
 const adicionaFormaPagamento = (formaPagamento) => {
@@ -157,20 +157,26 @@ const adicionaFormaPagamento = (formaPagamento) => {
     
     let somaTotalCompras = document.querySelector('.total-valor').innerText;
     let pedidosCarrinho = JSON.parse(localStorage.getItem("pedidos")) || [];
-
-  
+    let pedidoId = 0;
+    if(pedidosCarrinho.length > 0) {
+        pedidoId = Math.max(...pedidosCarrinho.map( item => item.numero));
+    }
+   
+    console.log(pedidoId);
 
     pedidosCarrinho.push({
-        numero: Math.random() * (10-0) + 1,
+        numero: pedidoId + 1,
         total: somaTotalCompras,
         formaPagamento: formaPagamento,
         nomeProdutos: nomes,
         data: Today2,
-        ...produtosLocalStorage
+        produtos: produtosLocalStorage
     })
 
     adicionaPedido(pedidosCarrinho);
-    console.log(pedidosCarrinho)
-    window.location.href="pedidos.html"
+    // console.log(pedidosCarrinho)
+    // window.location.href="pedidos.html"
 
 }
+
+    
