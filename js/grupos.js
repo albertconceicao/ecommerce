@@ -22,6 +22,7 @@ $.get("json/GRUPOS.json", function(data) {
       `;
       gruposHeader.innerHTML += gruposHeaderLista;
 
+      const listaGruposHeader = document.querySelector('#mobile-header-nav-itens');
       
       let subgruposLista = [];
       for (let subgrupos in subgrupo[0]) {
@@ -60,6 +61,7 @@ $.get("json/GRUPOS.json", function(data) {
         </div>
       `
       // console.log(conteudoLista);
+      listaGruposHeader.innerHTML += conteudoLista;
       listaGrupos.innerHTML += conteudoLista;
 
       const gruposFooter = document.querySelector('#grupos-footer')
