@@ -7,10 +7,13 @@ $.get("json/GRUPOS.json", function(data) {
 
     const retornaGrupos = (grupo, subgrupo, codigo) => {
 
+      const retornaGrupoEspecífico = () => {
+        
+      }
       const gruposHeader = document.querySelector('#grupos-header');
       const gruposHeaderLista = `
         <li class="nav-item">
-          <a href="" class="nav-link">
+          <a href="grupo.html?grupo=${codigo}" class="nav-link">
             <div>
               <img src="./img/tshirt-solid.svg" alt="Grupo de camisa">
             </div>
@@ -25,13 +28,12 @@ $.get("json/GRUPOS.json", function(data) {
         
         subgruposLista += `
         <li class="nav-item">
-            <a href="" class="nav-link nome-barra-lateral" >
+            <a href="subgrupo.html?subgrupo=${subgrupos}"  class="nav-link nome-barra-lateral" >
               ${subgrupo[0][subgrupos].toLowerCase()}
             </a>
         </li>
         `
       };
-      console.log(subgrupo);
       const subgrupos = subgrupo[0];
       
       let listaGrupos = document.querySelector('#aside-nav-itens');
@@ -40,7 +42,7 @@ $.get("json/GRUPOS.json", function(data) {
         <div id="grupo${codigo}">
           <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="" class="nav-link" onclick="mostrarLista('${codigo}')" >
+                <a href="" ondblclick="window.location.href = 'subgrupo.html?subgrupo=${subgrupo[0][subgrupos]}'" class="nav-link" onclick="mostrarLista('${codigo}')" >
                 ${grupo.toLowerCase()}
               </a> 
             </li>
@@ -63,7 +65,7 @@ $.get("json/GRUPOS.json", function(data) {
       const gruposFooter = document.querySelector('#grupos-footer')
       
       const linksGruposFooter = `
-        <a href="#" class="">${grupo.toLowerCase()}</a>
+        <a href="grupo.html?grupo=${codigo}" class="">${grupo.toLowerCase()}</a>
       `
 
       gruposFooter.innerHTML += linksGruposFooter;

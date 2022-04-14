@@ -182,6 +182,8 @@ div.txtpre-grupo p{
 div.pre-grupo {
     margin: 0 0 20px 0;
     padding: 20px 0;
+    display: flex;
+    justify-content: end;
 }
 
 .pre-grupo {
@@ -215,6 +217,7 @@ span.span-produtos{
     margin: 20px;
     display: flex;
     flex-direction: grid;
+    flex-wrap: wrap;
 
 }
 

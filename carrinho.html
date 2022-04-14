@@ -104,7 +104,7 @@
                             <div class="botoes">
     
                                 <button onclick="window.location.href = 'index.html'" id="mais-produtos" class="btn btn-lg"> Escolher mais produtos</button>
-                                <button onclick="window.location.href = '#forma-pagamento'" id="finalizar-compra" class="btn btn-lg"><i class="fas fa-shopping-cart "></i> Formas de Pagamento</button>
+                                <button onclick="irParaPagamento()" id="finalizar-compra" class="btn btn-lg"><i class="fas fa-shopping-cart "></i> Formas de Pagamento</button>
                             </div>
                         </div>
                         <!-- Button trigger modal -->
@@ -185,6 +185,29 @@
                         </div>
                        
                     </div>
+
+                    <div class="modal fade" id="pedido-concluido" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"   aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Pedido concluído</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>
+                                Parabéns, seu pedido foi realizado com sucesso!
+                              </p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar para página</button>
+                              <button type="button" class="btn btn-primary" onclick="window.location.href = 'pedidos.html'">Ir para pedidos</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
                     <section id="cartao-credito">
                         <div class="titulo-pagamento">
                             <img src="./img/credit-card-solid.svg" alt="">
@@ -222,7 +245,7 @@
                                 <a href="" class="nav-link">
                                     pagar com outro cartão
                                 </a>
-                                <button  onclick="adicionaFormaPagamento('cartao-credito')" class="btn btn-lg">
+                                <button  onclick="adicionaFormaPagamento('cartao-credito')" data-target="#pedido-concluido" data-toggle="modal" class="btn btn-lg">
                                     Fechar pedido
                                 </button>
                           </div>
@@ -253,7 +276,7 @@
                             <span>total:</span>
                             <span class="total-valor-boleto"></span>
                         </div>
-                        <button onclick="adicionaFormaPagamento('boleto-bancario')" class="btn btn-lg">
+                        <button onclick="adicionaFormaPagamento('boleto-bancario')" data-toggle="modal" data-target="#pedido-concluido" class="btn btn-lg">
                             Fechar pedido
                         </button>
 

@@ -355,7 +355,7 @@ section#pagamento-pix div#qrcode img{
     }
     
     table {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
     th {
         padding: 0.5rem 1rem;
@@ -368,7 +368,7 @@ section#pagamento-pix div#qrcode img{
     }
     td.produto-quantidade input {
         padding: 0;
-        width: 1rem;
+        width: 1.8rem;
     }
     .produto {
         width: 300px;

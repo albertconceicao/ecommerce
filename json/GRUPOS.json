@@ -6,9 +6,9 @@
         "CODIGO": "01",
         "DESCRI": "VEICULOS",
         "SUBGRUPOS": [{
-            "01": "NOVOS",
-            "02": "SEMINOVOS",
-            "03": "USADOS"
+            "0101": "NOVOS",
+            "0102": "SEMINOVOS",
+            "0103": "USADOS"
         }],
         "FILIAL": "0101",
         "VENDA": "S",
@@ -27,10 +27,10 @@
         "DESCRI": "PEÇAS",
         "SUBGRUPOS": [
             {
-            "01": "FREIOS",
-            "02": "PASTILHAS",
-            "03": "LIMPADOR DE PARABRISA",
-            "04": "FILTROS DE AR CONDICIONADO"
+            "0201": "FREIOS",
+            "0202": "PASTILHAS",
+            "0203": "LIMPADOR DE PARABRISA",
+            "0204": "FILTROS DE AR CONDICIONADO"
         }],
         "FILIAL": "0101",
         "VENDA": "S",
@@ -49,10 +49,10 @@
         "DESCRI": "INFORMÁTICA",
         "SUBGRUPOS": [
             {
-            "01": "HDS E SSDS",
-            "02": "FONTES",
-            "03": "MONITORES",
-            "04": "COMPUTADORES"
+            "0301": "HDS E SSDS",
+            "0302": "FONTES",
+            "0303": "MONITORES",
+            "0304": "COMPUTADORES"
         }],
         "FILIAL": "0101",
         "VENDA": "S",
@@ -72,10 +72,10 @@
         "DESCRI": "ROUPAS",
         "SUBGRUPOS": [
             {
-            "01": "MODA MASCULINA",
-            "02": "MODA FEMININA",
-            "03": "MODA INFANTIL",
-            "04": "IMPORTADAS"
+            "0401": "MODA MASCULINA",
+            "0402": "MODA FEMININA",
+            "0403": "MODA INFANTIL",
+            "0404": "IMPORTADAS"
         }],
         "FILIAL": "0101",
         "VENDA": "S",
@@ -95,10 +95,10 @@
         "DESCRI": "PAPELARIA",
         "SUBGRUPOS": [
             {
-            "01": "CADERNOS",
-            "02": "LÁPIS E CANETAS",
-            "03": "PORTA RETRATOS",
-            "04": "IMPRESSÕES"
+            "0501": "CADERNOS",
+            "0502": "LÁPIS E CANETAS",
+            "0503": "PORTA RETRATOS",
+            "0504": "FOTOS"
         }],
         "FILIAL": "0101",
         "VENDA": "S",

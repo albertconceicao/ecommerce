@@ -124,7 +124,13 @@ function removeItem(codigoProduto) {
 
 
 
-
+const irParaPagamento = () => {
+    let formasPagamento = document.querySelector('#forma-pagamento');
+    formasPagamento.style.transitionDelay = '0.3s';
+    formasPagamento.href = '#forma-pagamento';
+    
+    window.location = formasPagamento.href;
+}
 
 const limpaCarrinho = () => localStorage.removeItem("produtos");
 const adicionaPedido = (pedido) => {
@@ -174,7 +180,7 @@ const adicionaFormaPagamento = (formaPagamento) => {
     })
 
     adicionaPedido(pedidosCarrinho);
-    window.location.href="pedidos.html"
+    // window.location.href="pedidos.html"
 
 }
 

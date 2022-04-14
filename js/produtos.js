@@ -37,7 +37,7 @@ $.get("json/PRODUT.json", function (data) {
           <small>
             12x de Valor no Forma de Pagamento
           </small>
-          <a href="#" data-codigo="${codigo}" data-titulo="${titulo}"  data-valor="${valor}" id="${codigo}-botao" class="btn btn-primary">Comprar</a>
+          <a href="#" data-codigo="${codigo}" data-titulo="${titulo}" id="${codigo}-botao" data-valor="${valor}" class="btn btn-primary">Comprar</a>
         </div>
       </div>
     </div>
@@ -70,7 +70,7 @@ $.get("json/PRODUT.json", function (data) {
     
 
     const adicionaCarrinho = (produto, codigo, valor) => {
-
+      event.preventDefault();
       let produtosCarrinho = JSON.parse(localStorage.getItem('produtos')) || [];
 
       let codigoProdutosCarrinho = produtosCarrinho.filter(item=> item.codigo === codigo);
@@ -78,7 +78,6 @@ $.get("json/PRODUT.json", function (data) {
       console.log(codigoProdutosCarrinho);
 
       if(codigoProdutosCarrinho.length === 0){
-
         produtosCarrinho.push({
           id:  Math.random() * (10-0) + 0,
           produto: produto, 
@@ -87,6 +86,8 @@ $.get("json/PRODUT.json", function (data) {
           quantidade: 1
         });
         localStorage.setItem('produtos', JSON.stringify(produtosCarrinho));
+
+        // window.location.href = 'carrinho.html'
       }
       else {
         console.log('Produto existente no carrinho');
@@ -98,7 +99,7 @@ $.get("json/PRODUT.json", function (data) {
     };
     
     // let botaoCompra = 
-    let botaoCompra = document.getElementById('010109-botao');
+    // let botaoCompra = document.getElementById('010109-botao');
     let botaoCompraProdutos = document.getElementById(`${codigo}-botao`);
     
 
@@ -106,7 +107,7 @@ $.get("json/PRODUT.json", function (data) {
     
 
     botaoCompraProdutos.addEventListener('click', (event) => {
-      
+      console.log('Clicou');
       let tituloProduto = botaoCompraProdutos.getAttribute("data-titulo");
       let codigoProduto = botaoCompraProdutos.getAttribute("data-codigo");
       // let codigoProduto = document.getElementById(`${codigo}`).id;
@@ -115,15 +116,7 @@ $.get("json/PRODUT.json", function (data) {
       adicionaCarrinho(tituloProduto, codigoProduto, valorProduto);
     });
 
-    botaoCompra.addEventListener('click', (event) => {
-      
-      let tituloProduto = botaoCompra.getAttribute("data-titulo");
-      let codigoProduto = botaoCompra.getAttribute("data-codigo");
-      // let codigoProduto = document.getElementById(`${codigo}`).id;
-      let valorProduto = botaoCompra.getAttribute("data-valor");
-      
-      adicionaCarrinho(tituloProduto, codigoProduto, valorProduto);
-    });
+   
 
 
   
@@ -132,10 +125,16 @@ $.get("json/PRODUT.json", function (data) {
   const dataProdutoString = JSON.stringify(data);
   const dataJsonProduto = JSON.parse(dataProdutoString);
   
-
+  let linhaProdutos = [];
+  
+  let i = 0;
   const produtosArray = dataJsonProduto.data.forEach((produto) => {
+    linhaProdutos.push(produto);
+    while(linhaProdutos.length <=6) {
+      retornaCard(produto.DESCRICAO, produto.CODIGO, produto.VENDA, produto.IMAGEM);
+      break;
+    }
     
-    retornaCard(produto.DESCRICAO, produto.CODIGO, produto.VENDA, produto.IMAGEM);
   });
 
   

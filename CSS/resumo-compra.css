@@ -1,0 +1,85 @@
+main.container {
+    display: flex;
+    justify-content: center;
+}
+
+main h2{
+    border-bottom: 1px solid var(--gray3);
+}
+
+
+#produto {
+   
+    border-radius: 00.25rem;
+    padding: 20px;
+    box-shadow: 3px 2px 5px rgba(17,17,17,0.55);
+
+}
+
+#produto .span-produto{
+    margin: 10px auto 0 auto;
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 10px;
+
+}
+#produto .span-valor {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: var(--black);
+    font-weight: 600;
+    margin: 40px 20px 0 0 ;
+}
+#produto .quantidade-pagamento {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#produto h3{
+    border-bottom: 1px solid gray;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 20px 0 ;
+}
+
+div#botoes-compra {
+    display: flex;
+    justify-content: center;
+}
+div.qtd-produtos button.btn.btn-lg {
+    margin: 1.6rem;
+    padding: 8px 50px 8px 50px;
+    border-radius: 0.25rem;
+    color: var(--white);
+    background: var(--gray3);
+    transition: filter 0.2s;
+}
+div#botoes-compra button.btn.btn-lg:hover {
+    filter: brightness(0.9);
+}
+
+ @media (max-width: 991.98px) { 
+    
+    div#imagens {
+        margin: 0 0 10px 0;
+    }
+    div#produto {
+        margin: 10px 0 0 0;
+    }
+   }
+
+/*  // Small devices (landscape phones, less than 768px) */
+  @media (min-width: 767.98px) { 
+    #produto{
+        
+        
+        
+    }
+    div#imagens  {
+        
+    }
+     
+  }
+
+
