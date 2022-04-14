@@ -87,7 +87,7 @@ $.get("json/PRODUT.json", function (data) {
             quantidade: 1
           });
           localStorage.setItem('produtos', JSON.stringify(produtosCarrinho));
-          // window.location.href = 'carrinho.html'
+          window.location.href = 'carrinho.html'
         }
         else {
           console.log('Produto existente no carrinho');
