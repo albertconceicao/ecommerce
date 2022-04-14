@@ -61,8 +61,8 @@ $.get("json/GRUPOS.json", function(data) {
         </div>
       `
       // console.log(conteudoLista);
-      listaGruposHeader.innerHTML += conteudoLista;
       listaGrupos.innerHTML += conteudoLista;
+      // listaGruposHeader.innerHTML += conteudoLista;
 
       const gruposFooter = document.querySelector('#grupos-footer')
       
