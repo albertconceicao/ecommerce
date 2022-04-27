@@ -1,16 +1,38 @@
-    
-$.get("json/PRODUT.json", function (data) {
-  
-  function formataValor  (valor) {
-    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  } 
-  let botoesCompra = {botoes: []};
+const adicionaCarrinho = (produto, codigo, valor) => {
+    event.preventDefault();
+    let produtosCarrinho = JSON.parse(localStorage.getItem('produtos')) || [];
 
-  function retornaCard(titulo, codigo, valor, imagem) {
-    
-    
-    const cardProduto = 
-    `
+    let codigoProdutosCarrinho = produtosCarrinho.filter(item => item.codigo === codigo);
+
+    console.log(codigoProdutosCarrinho);
+
+    if (codigoProdutosCarrinho.length === 0) {
+        produtosCarrinho.push({
+            id: Math.random() * (10 - 0) + 0,
+            produto: produto,
+            codigo: codigo,
+            valor: valor,
+            quantidade: 1
+        });
+        localStorage.setItem('produtos', JSON.stringify(produtosCarrinho));
+        $(`#adicionar-${codigo}`).modal('show');
+
+    } else {
+        $(`#${codigo}`).modal('show');
+        console.log('Produto existente no carrinho');
+    }
+};
+
+$.get("json/PRODUT.json", function(data) {
+
+    function formataValor(valor) {
+        return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+    let botoesCompra = { botoes: [] };
+
+    function retornaCard(titulo, codigo, valor, imagem) {
+        const cardProduto =
+            `
     <div class="col-lg-4">
       <div class="card" >
         <img class="card-img-top img-fluid" height="120px" src="${imagem}" alt="Card image cap">
@@ -87,87 +109,63 @@ $.get("json/PRODUT.json", function (data) {
         </div>
       </div>
     </div>
-    `
-    ;
-    const cardSecao = document.querySelector("#produtos");
+    `;
+        const cardSecao = document.querySelector("#produtos");
 
-    cardSecao.innerHTML += cardProduto;
-    
+        cardSecao.innerHTML += cardProduto;
 
-    const adicionaCarrinho = (produto, codigo, valor) => {
-      event.preventDefault();
-      let produtosCarrinho = JSON.parse(localStorage.getItem('produtos')) || [];
+        // let botaoCompra = 
+        // let botaoCompra = document.getElementById('010109-botao');
+        let botaoCompraProdutos = document.getElementById(`${codigo}-botao-carrinho`);
+        botoesCompra.botoes.push({ botaoCompraProdutos });
 
-      let codigoProdutosCarrinho = produtosCarrinho.filter(item=> item.codigo === codigo);
+        // botaoCompraProdutos.addEventListener('click', (event) => {
+        //     event.preventDefault();
+        //     // $(`#adicionar-${codigo}`).modal({
+        //     //   show: true
+        //     // });
+        //     console.log('Clicou');
+        //     // let tituloProduto = botaoCompraProdutos.getAttribute("data-titulo");
+        //     // let codigoProduto = botaoCompraProdutos.getAttribute("data-codigo");
+        //     // // let codigoProduto = document.getElementById(`${codigo}`).id;
+        //     // let valorProduto = botaoCompraProdutos.getAttribute("data-valor");
 
-      console.log(codigoProdutosCarrinho);
-      
-      if(codigoProdutosCarrinho.length === 0){
-        produtosCarrinho.push({
-          id:  Math.random() * (10-0) + 0,
-          produto: produto, 
-          codigo: codigo, 
-          valor: valor,
-          quantidade: 1
-        });
-        localStorage.setItem('produtos', JSON.stringify(produtosCarrinho));
-        $(`#adicionar-${codigo}`).modal('show');
-       
-      }
-      else {
-        $(`#${codigo}`).modal('show');
-        console.log('Produto existente no carrinho');
-      }
-    };
-    
-    // let botaoCompra = 
-    // let botaoCompra = document.getElementById('010109-botao');
-    let botaoCompraProdutos = document.getElementById(`${codigo}-botao-carrinho`);
-    botoesCompra.botoes.push({botaoCompraProdutos});
-    
+        //     // adicionaCarrinho(tituloProduto, codigoProduto, valorProduto);
+        // });
 
-    // console.log(botaoCompra, botaoCompraProdutos);
-    
 
-    botaoCompraProdutos.addEventListener('click', (event) => {
-      // $(`#adicionar-${codigo}`).modal({
-      //   show: true
-      // });
-      // console.log('Clicou');
-      let tituloProduto = botaoCompraProdutos.getAttribute("data-titulo");
-      let codigoProduto = botaoCompraProdutos.getAttribute("data-codigo");
-      // let codigoProduto = document.getElementById(`${codigo}`).id;
-      let valorProduto = botaoCompraProdutos.getAttribute("data-valor");
-      
-      adicionaCarrinho(tituloProduto, codigoProduto, valorProduto);
+
+
+
+    }
+
+    const dataProdutoString = JSON.stringify(data);
+    const dataJsonProduto = JSON.parse(dataProdutoString);
+    console.log(dataJsonProduto.data);
+    let linhaProdutos = [];
+
+    let i = 0;
+    const produtosArray = dataJsonProduto.data.forEach((produto) => {
+        linhaProdutos.push(produto);
+        while (linhaProdutos.length <= 6) {
+            retornaCard(produto.DESCRICAO, produto.CODIGO, produto.VENDA, produto.IMAGEM);
+            break;
+        }
     });
 
-   
+    var elements = document.getElementsByClassName("btn-adicionar");
 
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log(event.currentTarget);
+            let tituloProduto = event.currentTarget.getAttribute("data-titulo");
+            let codigoProduto = event.currentTarget.getAttribute("data-codigo");
+            // let codigoProduto = document.getElementById(`${codigo}`).id;
+            let valorProduto = event.currentTarget.getAttribute("data-valor");
 
-  
-  }
-  console.log(botoesCompra["botoes"]);
-  botoesCompra.botoes.forEach(botao => console.log(botao));
-
-  const dataProdutoString = JSON.stringify(data);
-  const dataJsonProduto = JSON.parse(dataProdutoString);
-  console.log(dataJsonProduto.data);
-  let linhaProdutos = [];
-  
-  let i = 0;
-  const produtosArray = dataJsonProduto.data.forEach((produto) => {
-    linhaProdutos.push(produto);
-    while(linhaProdutos.length <=6) {
-      retornaCard(produto.DESCRICAO, produto.CODIGO, produto.VENDA, produto.IMAGEM);
-      break;
+            adicionaCarrinho(tituloProduto, codigoProduto, valorProduto);
+        })
     }
-    
-  });
-
-  
-  
-  
-
 
 })
