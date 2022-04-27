@@ -4,6 +4,8 @@ $.get("json/PRODUT.json", function (data) {
   function formataValor  (valor) {
     return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   } 
+  let botoesCompra = {botoes: []};
+
   function retornaCard(titulo, codigo, valor, imagem) {
     
     
@@ -37,28 +39,51 @@ $.get("json/PRODUT.json", function (data) {
           <small>
             12x de Valor no Forma de Pagamento
           </small>
-          <a href="#" data-codigo="${codigo}" data-titulo="${titulo}" id="${codigo}-botao" data-valor="${valor}" class="btn btn-primary">Comprar</a>
+          <a href="#" data-codigo="${codigo}" data-titulo="${titulo}" id="${codigo}-botao-carrinho" data-valor="${valor}" class="btn btn-adicionar">Adicionar ao Carrinho</a>
+          <a href="carrinho.html" data-codigo="${codigo}" data-titulo="${titulo}" id="${codigo}-botao-compra" data-valor="${valor}" class="btn btn-primary">Comprar</a>
         </div>
       </div>
     </div>
 
     <div class="modal fade" id="${codigo}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"   aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Produto já adicionado ao carrinho</h5>
+            <h5 class="modal-title" id="${codigo}">Produto já adicionado ao carrinho</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <p>
-              ${titulo} já foi adicionado ao carrinho
+            <strong>${titulo.toLowerCase()}</strong> já foi adicionado ao carrinho
             </p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar para página</button>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="adicionar-${codigo}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"   aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="adicionar-${codigo}">Produto adicionado ao carrinho</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              <strong>${titulo.toLowerCase()}</strong> adicionado ao carrinho com sucesso. Deseja ir para o carrinho ou escolher mais produtos?
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Escolher mais produtos</button>
+            <button type="button" onclick="window.location.href='carrinho.html'" class="btn btn-primary">Ir para o carrinho</button>
+        </div>
         </div>
       </div>
     </div>
@@ -76,7 +101,7 @@ $.get("json/PRODUT.json", function (data) {
       let codigoProdutosCarrinho = produtosCarrinho.filter(item=> item.codigo === codigo);
 
       console.log(codigoProdutosCarrinho);
-
+      
       if(codigoProdutosCarrinho.length === 0){
         produtosCarrinho.push({
           id:  Math.random() * (10-0) + 0,
@@ -86,28 +111,29 @@ $.get("json/PRODUT.json", function (data) {
           quantidade: 1
         });
         localStorage.setItem('produtos', JSON.stringify(produtosCarrinho));
-
-        window.location.href = 'carrinho.html'
+        $(`#adicionar-${codigo}`).modal('show');
+       
       }
       else {
+        $(`#${codigo}`).modal('show');
         console.log('Produto existente no carrinho');
-        $(`#${codigo}`).modal({
-          show: true
-        });
       }
-      console.log(produtosCarrinho);
     };
     
     // let botaoCompra = 
     // let botaoCompra = document.getElementById('010109-botao');
-    let botaoCompraProdutos = document.getElementById(`${codigo}-botao`);
+    let botaoCompraProdutos = document.getElementById(`${codigo}-botao-carrinho`);
+    botoesCompra.botoes.push({botaoCompraProdutos});
     
 
     // console.log(botaoCompra, botaoCompraProdutos);
     
 
     botaoCompraProdutos.addEventListener('click', (event) => {
-      console.log('Clicou');
+      // $(`#adicionar-${codigo}`).modal({
+      //   show: true
+      // });
+      // console.log('Clicou');
       let tituloProduto = botaoCompraProdutos.getAttribute("data-titulo");
       let codigoProduto = botaoCompraProdutos.getAttribute("data-codigo");
       // let codigoProduto = document.getElementById(`${codigo}`).id;
@@ -121,10 +147,12 @@ $.get("json/PRODUT.json", function (data) {
 
   
   }
+  console.log(botoesCompra["botoes"]);
+  botoesCompra.botoes.forEach(botao => console.log(botao));
 
   const dataProdutoString = JSON.stringify(data);
   const dataJsonProduto = JSON.parse(dataProdutoString);
-  
+  console.log(dataJsonProduto.data);
   let linhaProdutos = [];
   
   let i = 0;

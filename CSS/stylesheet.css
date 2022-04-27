@@ -1,5 +1,9 @@
 :root {
     --gray: #a3a3c2;
+    /* --gray-button: #ffff33; */
+    --gray-button: #ffb366;
+    --gray-button2: #ff8000;
+    /* --gray-button2: #8585ad; */
     --white: #fff;
     --black: #000;
     --gray2: #b1b1cd;
@@ -240,16 +244,14 @@ a.card-title {
     margin: 10px;
     font-size: 1em;
 }
-a.card-title:hover {
-    
-}
+
 span.codigo  {
     color:var(--gray);
     font-size: 0.8em;
 }
 p.card-text {
     margin:  10px;
-    font-size: 0.2em;
+    font-size: 0.2rem;
 }
 p.card-text img{
     height: 30px;
@@ -259,20 +261,39 @@ p.card-text img{
 }
 .card span {
     color: blue;
-    font-size: 1em;
+    font-size: 1rem;
     margin-top: 5px;
 }
 .card small {
     color: var(--gray);
     opacity: 0.5px;
     margin: 5px ;
-    font-size: 0.7em;
+    font-size: 0.7rem;
 }
 a.btn.btn-primary {
     margin: 0px;
     width: 100%;
     border-radius: 0px 0px 3px 3px;
-    font-size: 1em;
+    font-size: 1rem;
+    background: var(--gray-button2);
+    
+}
+a.btn-adicionar{
+    margin: 0.5rem 0;
+    width: 82%;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    background: var(--gray-button);
+    color: var(--white);
+
+    transition: filter 0.2s;
+}
+a.btn.btn-primary:hover, a.btn-adicionar:hover{
+   filter: brightness(0.9);
+}
+
+div.modal-body strong {
+    text-transform: capitalize;
 }
 
 /* 

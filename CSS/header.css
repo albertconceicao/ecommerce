@@ -1,5 +1,8 @@
 :root {
     --gray: #a3a3c2;
+    --bue: #6699ff;
+    --blue2: #4d88ff;
+    --blue3: #3377ff;
     --white: #fff;
     --black: #000;
     --gray2: #b1b1cd;
@@ -10,7 +13,7 @@
     --stars-filled: #FC0;
     --gray3: rgb(128,128,128);
     --button-hover: #00ff00;
-    --blue: #0066ff
+    --blue: #0066ff;
 
 }
 
