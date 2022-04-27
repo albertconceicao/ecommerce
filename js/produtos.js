@@ -95,6 +95,9 @@ $.get("json/PRODUT.json", function (data) {
     
 
     const adicionaCarrinho = (produto, codigo, valor) => {
+      // this.produto = produto;
+      // this.codigo = codigo;
+      // this.valor= valor;
       event.preventDefault();
       let produtosCarrinho = JSON.parse(localStorage.getItem('produtos')) || [];
 
@@ -134,10 +137,14 @@ $.get("json/PRODUT.json", function (data) {
       //   show: true
       // });
       // console.log('Clicou');
-      let tituloProduto = botaoCompraProdutos.getAttribute("data-titulo");
-      let codigoProduto = botaoCompraProdutos.getAttribute("data-codigo");
-      // let codigoProduto = document.getElementById(`${codigo}`).id;
-      let valorProduto = botaoCompraProdutos.getAttribute("data-valor");
+      let tituloProduto = event.currentTarget.getAttribute("data-titulo");
+      let codigoProduto = event.currentTarget.getAttribute("data-codigo");
+      let valorProduto = event.currentTarget.getAttribute("data-valor");
+      console.log(tituloProduto, codigoProduto, valorProduto)
+      // this.tituloProduto = botaoCompraProdutos.getAttribute("data-titulo");
+      // this.codigoProduto = botaoCompraProdutos.getAttribute("data-codigo");
+      // // let codigoProduto = document.getElementById(`${codigo}`).id;
+      // this.valorProduto = botaoCompraProdutos.getAttribute("data-valor");
       
       adicionaCarrinho(tituloProduto, codigoProduto, valorProduto);
     });
