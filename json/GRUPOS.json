@@ -4,11 +4,11 @@
     "data": [
     {
         "CODIGO": "01",
-        "DESCRI": "VEICULOS",
+        "DESCRI": "QUARTO",
         "SUBGRUPOS": [{
-            "0101": "NOVOS",
-            "0102": "SEMINOVOS",
-            "0103": "USADOS"
+            "0101": "ADULTO",
+            "0102": "INFANTIL",
+            "0103": "ADOLESCENTE"
         }],
         "FILIAL": "0101",
         "VENDA": "S",
@@ -24,13 +24,13 @@
     },
     {
         "CODIGO": "02",
-        "DESCRI": "PEÇAS",
+        "DESCRI": "SALA",
         "SUBGRUPOS": [
             {
-            "0201": "FREIOS",
-            "0202": "PASTILHAS",
-            "0203": "LIMPADOR DE PARABRISA",
-            "0204": "FILTROS DE AR CONDICIONADO"
+            "0201": "INDUSTRIAL",
+            "0202": "MODERNA",
+            "0203": "GRANDE",
+            "0204": "PEQUENA"
         }],
         "FILIAL": "0101",
         "VENDA": "S",
@@ -46,13 +46,13 @@
     },
     {
         "CODIGO": "03",
-        "DESCRI": "INFORMÁTICA",
+        "DESCRI": "COZINHA",
         "SUBGRUPOS": [
             {
-            "0301": "HDS E SSDS",
-            "0302": "FONTES",
-            "0303": "MONITORES",
-            "0304": "COMPUTADORES"
+            "0301": "INDUSTRIAL",
+            "0302": "MODERNA",
+            "0303": "PEQUENA",
+            "0304": "ILHA"
         }],
         "FILIAL": "0101",
         "VENDA": "S",
@@ -69,13 +69,13 @@
 
     {
         "CODIGO": "04",
-        "DESCRI": "ROUPAS",
+        "DESCRI": "EMPRESA",
         "SUBGRUPOS": [
             {
-            "0401": "MODA MASCULINA",
-            "0402": "MODA FEMININA",
-            "0403": "MODA INFANTIL",
-            "0404": "IMPORTADAS"
+            "0401": "STÚDIO",
+            "0402": "BARBEARIA",
+            "0403": "ESCRITÓRIO",
+            "0404": "SALÃO"
         }],
         "FILIAL": "0101",
         "VENDA": "S",
@@ -92,13 +92,13 @@
 
     {
         "CODIGO": "05",
-        "DESCRI": "PAPELARIA",
+        "DESCRI": "ÁREA EXTERNA",
         "SUBGRUPOS": [
             {
-            "0501": "CADERNOS",
-            "0502": "LÁPIS E CANETAS",
-            "0503": "PORTA RETRATOS",
-            "0504": "FOTOS"
+            "0501": "PISCINA",
+            "0502": "CHURRASQUEIRA",
+            "0503": "VARANDA",
+            "0504": "ÁREA DE SERVIÇO"
         }],
         "FILIAL": "0101",
         "VENDA": "S",

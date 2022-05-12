@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mithra-erp/ecommerce#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "correios-brasil": "^2.2.2",
     "watchify": "^4.0.0"
   }
