@@ -41,7 +41,7 @@
             const diminuiQuantidade = (() => {
                 return quantidade >= 0 ? quantidade-- : 0;
             })
-            const mostraFormaPagamento = (div, div2) => {
+            const mostraConteudo = (div, div2) => {
                 let formaPagamento = document.getElementById(div);
                 let formaPagamento2 = document.getElementById(div2);
                  if(formaPagamento.style.display === 'none'){
@@ -112,15 +112,15 @@
                     <span class="span-produto">Disponibilidade:</span>
                     <span class="span-valor">R$2.500,00</span>
                     <small class="quantidade-pagamento">12x de Valor no Forma de Pagamento</small>
-                    <!-- <h3><img src="" alt=""><i class="fas fa-plus"></i>Informe a largura e altura da sua parede</h3>
+                    <h3><img src="" alt=""><i class="fas fa-plus"></i>Informe a largura e altura da sua parede</h3>
                     <div id="calculo-rolos">
                       <input class="form-control" type="text" placeholder="Largura da parede">
                       <input class="form-control" type="text" placeholder="Altura da parede">
                     </div>
                     <div id="total" class="class-group">
-                      <button class="btn btn-lg">Calcular quantidade de rolos</button>
+                      <button class="btn btn-lg">Calcular rolos</button>
                       <input class="form-control" type="text" placeholder="Total" disabled>
-                    </div> -->
+                    </div>
                     <div id="acoes-compra">
                         <h3>Comprar ou adicionar ao carrinho</h3>
                         <div class="qtd-produtos">
@@ -162,10 +162,10 @@
         <section>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#" onclick="mostraFormaPagamento('descricao', 'comentarios')">Descrição</a>
+                  <a class="nav-link active" href="#" onclick="mostraConteudo('descricao', 'comentarios')">Descrição</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" onclick="mostraFormaPagamento('comentarios', 'descricao')">Comentários</a>
+                  <a class="nav-link" href="#" onclick="mostraConteudo('comentarios', 'descricao')">Comentários</a>
                 </li>
             </ul>
             <div id="descricao">

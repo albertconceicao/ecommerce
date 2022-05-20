@@ -125,23 +125,24 @@ div#calculo-rolos {
 div#calculo-rolos input {
     margin: 0 0.5rem;
 }
-div#calculo-rolos input::placeholder{
+div#calculo-rolos input::placeholder, div#total input::placeholder{
     font-size: 0.8rem;
+    text-align: center;
 }
 div#calculo-rolos div.input-group {
     margin: 0;
     padding: 0;
 }
 div#total {
-    margin: 1rem 0 1rem 0.5rem;
     display: flex;
     justify-content: space-between;
+    margin: 0.8rem 0;
 
 }
 div#total input{
-    width: 50%;
+    width: 184px;
 }
-div button.btn.btn-lg {
+div#total button.btn.btn-lg {
     font-size: 0.8rem;
     margin-right: 0.5rem;
     display: inline;
@@ -150,11 +151,15 @@ div button.btn.btn-lg {
     color: var(--white);
     background: var(--gray);
     transition: filter 0.2s;
+    width: 184px;
+}
+div#total button.btn.btn-lg:hover {
+   filter: brightness(0.8);
 }
 div#cep.input-group {
     margin: 30px 0;
 }
-div#cep input.form-control {
+div#cep input.form-control, div#calculo-rolos input.form-control, div#total input.form-control{
     font-size: 0.8rem;
     margin: 0 20px 0 0;
     border-radius: 0.25rem;
