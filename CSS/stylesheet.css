@@ -65,6 +65,14 @@ footer span{
 }
 
 /* 
+------------- Carousel  ----------------
+*/
+
+div#carouselExampleControls img {
+    height: 250px;
+}
+
+/* 
 ------------- Menu lateral  ----------------
 */
 

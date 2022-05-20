@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -34,6 +35,47 @@
         
     </script>
     <title>Login</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+
+    <script>
+
+        function handleCredentialResponse(response) {
+            const data = jwt_decode(response.credential);
+            localStorage.setItem("usuario", JSON.stringify(data));
+            window.location.href = 'index.html'
+        }
+        window.onload = function () {
+          google.accounts.id.initialize({
+            client_id: "451648081764-ebcrevlbuv6552teqtbivkuctdp2qhbj.apps.googleusercontent.com",
+            callback: handleCredentialResponse
+          });
+          google.accounts.id.renderButton(
+            document.getElementById("buttonDivLogin"),
+            { 
+                type:"standard",
+                shape:"pill",
+                theme:"outline",
+                text:"$ {button.text}",
+                size:"large",
+                logo_alignment:"left"
+            }  // customization attributes
+          );
+          google.accounts.id.renderButton(
+              document.getElementById("buttonDivCadastro"),
+              {
+                type:"standard",
+                shape:"pill",
+                theme:"outline",
+                text:"$ {button.text}",
+                size:"large",
+                logo_alignment:"left"
+              }
+          )
+          google.accounts.id.prompt(); 
+          // also display the One Tap dialog
+        }
+    </script>
     <link rel="icon" href="./img/logo4.png">
 </head>
 <body>
@@ -71,6 +113,7 @@
                     <small>
                         <a href="" class="nav-link" onclick="criarConta('login' ,'cadastro')">Já tem uma conta? clique para fazer login</a>
                     </small>
+                    <div id="buttonDivCadastro"></div> 
                     <!--Início Formulário-->
                 </form>
                 <!--Fim Formulário-->
@@ -102,6 +145,14 @@
                     <small>
                         <a href="" class="nav-link" onclick="criarConta('cadastro' ,'login')">Não tem uma conta, crie cliando aqui</a>
                     </small>
+
+                    <div id="buttonDivLogin"></div> 
+
+                    <span id="fullName"></span><br>
+                    <span id="sub"></span><br>
+                    <span id="email"></span><br>
+                    <img id="picture"></img><br>
+                    <span id="verified_email"></span>
                     <script>
                         const criarConta = (div, div2) => {
                             let opcao = document.getElementById(div);

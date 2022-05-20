@@ -85,6 +85,10 @@ button#pesquisa-botao:hover{
 
 }
 
+a#icone-usuario.nav-link {
+    width: 150px;
+}
+
 
 div#grupos-web.container-fluid {
     display: flex;
