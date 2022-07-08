@@ -61,6 +61,7 @@ ul {
     justify-content: end;
 }
 
+
 div.input-group {
     margin: 0px;
 }
@@ -79,6 +80,9 @@ button#pesquisa-botao{
     background: var(--gray2);
     transition: filter 0.2s;
 
+}
+button#pesquisa-botao span {
+    display: none;
 }
 button#pesquisa-botao:hover{
     filter: brightness(1.1)
