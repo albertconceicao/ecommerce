@@ -122,6 +122,9 @@ div#calculo-rolos {
     display: flex;
     justify-content: space-between;
 }
+div#calculo-rolos input, div#total input, div#total button.btn.btn-lg {
+    width: 230px;
+}
 div#calculo-rolos input {
     margin: 0 0.5rem;
 }
@@ -139,9 +142,9 @@ div#total {
     margin: 0.8rem 0;
 
 }
-div#total input{
+/* div#total input{
     width: 184px;
-}
+} */
 div#total button.btn.btn-lg {
     font-size: 0.8rem;
     margin-right: 0.5rem;
@@ -151,7 +154,6 @@ div#total button.btn.btn-lg {
     color: var(--white);
     background: var(--gray);
     transition: filter 0.2s;
-    width: 184px;
 }
 div#total button.btn.btn-lg:hover {
    filter: brightness(0.8);

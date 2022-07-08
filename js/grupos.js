@@ -1,4 +1,4 @@
-$.get("http://localhost:8080/ecommerce-mithra/php/grupos.php", function(data) {
+$.get("json/GRUPOS.json", function(data) {
     let dataString = JSON.stringify(data);
     const dataJson =  JSON.parse(dataString);
     console.log(dataJson);
