@@ -15,6 +15,7 @@ const adicionaCarrinho = (produto, codigo, valor) => {
             quantidade: 1
         });
         localStorage.setItem('produtos', JSON.stringify(produtosCarrinho));
+        localStorage.setItem('produto', JSON.stringify(produto))
         $(`#adicionar-${codigo}`).modal('show');
 
     } else {
@@ -23,7 +24,7 @@ const adicionaCarrinho = (produto, codigo, valor) => {
     }
 };
 
-$.get("http://localhost:8080/ecommerce-mithra/php/produtos.php", function(data) {
+$.get("json/PRODUT.json", function(data) {
   console.log(data);
     function formataValor(valor) {
         return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
